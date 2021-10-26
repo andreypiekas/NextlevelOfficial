@@ -9,7 +9,7 @@
             <Property name="text" type="java.lang.String" value="Cadastro/Funcion&#xe1;rio"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROCLIENTEMENU">
+            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROMENU">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
@@ -21,10 +21,13 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cliente"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaPrincipalCADASTROCLIENTEActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu1">
+            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROFUNCIONARIOSMENU">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Funcionarios"/>
               </Properties>

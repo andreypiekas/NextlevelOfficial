@@ -39,9 +39,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         TelaPrincipalMENU = new javax.swing.JMenuBar();
         TelaPrincipalCADASTRO = new javax.swing.JMenu();
-        TelaPrincipalCADASTROCLIENTEMENU = new javax.swing.JMenu();
+        TelaPrincipalCADASTROMENU = new javax.swing.JMenu();
         TelaPrincipalCADASTROCLIENTE = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        TelaPrincipalCADASTROFUNCIONARIOSMENU = new javax.swing.JMenu();
         TelaPrincipalCADASTROFUNCIONARIOS = new javax.swing.JMenuItem();
         TelaPrincipalPEDIDOS = new javax.swing.JMenu();
         TelaPrincipalPEDIDOSPEDIDOS = new javax.swing.JMenuItem();
@@ -82,15 +82,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         TelaPrincipalCADASTRO.setText("Cadastro/Funcionário");
 
-        TelaPrincipalCADASTROCLIENTEMENU.setText("Cliente");
+        TelaPrincipalCADASTROMENU.setText("Cliente");
 
         TelaPrincipalCADASTROCLIENTE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK));
         TelaPrincipalCADASTROCLIENTE.setText("Cliente");
-        TelaPrincipalCADASTROCLIENTEMENU.add(TelaPrincipalCADASTROCLIENTE);
+        TelaPrincipalCADASTROCLIENTE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaPrincipalCADASTROCLIENTEActionPerformed(evt);
+            }
+        });
+        TelaPrincipalCADASTROMENU.add(TelaPrincipalCADASTROCLIENTE);
 
-        TelaPrincipalCADASTRO.add(TelaPrincipalCADASTROCLIENTEMENU);
+        TelaPrincipalCADASTRO.add(TelaPrincipalCADASTROMENU);
 
-        jMenu1.setText("Funcionarios");
+        TelaPrincipalCADASTROFUNCIONARIOSMENU.setText("Funcionarios");
 
         TelaPrincipalCADASTROFUNCIONARIOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         TelaPrincipalCADASTROFUNCIONARIOS.setText("Funcionários");
@@ -100,9 +105,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 TelaPrincipalCADASTROFUNCIONARIOSActionPerformed(evt);
             }
         });
-        jMenu1.add(TelaPrincipalCADASTROFUNCIONARIOS);
+        TelaPrincipalCADASTROFUNCIONARIOSMENU.add(TelaPrincipalCADASTROFUNCIONARIOS);
 
-        TelaPrincipalCADASTRO.add(jMenu1);
+        TelaPrincipalCADASTRO.add(TelaPrincipalCADASTROFUNCIONARIOSMENU);
 
         TelaPrincipalMENU.add(TelaPrincipalCADASTRO);
 
@@ -187,6 +192,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void TelaPrincipalCADASTROFUNCIONARIOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalCADASTROFUNCIONARIOSActionPerformed
         // TODO add your handling code here:
+        TelaFuncionarios funcionarios = new TelaFuncionarios();
+        funcionarios.setVisible(true);
     }//GEN-LAST:event_TelaPrincipalCADASTROFUNCIONARIOSActionPerformed
 
     private void TelaPrincipalPEDIDOSSOBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalPEDIDOSSOBREActionPerformed
@@ -213,6 +220,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_TelaPrincipalOPCOESSAIRActionPerformed
+
+    private void TelaPrincipalCADASTROCLIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalCADASTROCLIENTEActionPerformed
+        // TODO add your handling code here:
+        TelaClientes clientes = new TelaClientes();
+        clientes.setVisible(true);
+    }//GEN-LAST:event_TelaPrincipalCADASTROCLIENTEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,8 +266,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu TelaPrincipalAJUDA;
     private javax.swing.JMenu TelaPrincipalCADASTRO;
     private javax.swing.JMenuItem TelaPrincipalCADASTROCLIENTE;
-    private javax.swing.JMenu TelaPrincipalCADASTROCLIENTEMENU;
     public static javax.swing.JMenuItem TelaPrincipalCADASTROFUNCIONARIOS;
+    private javax.swing.JMenu TelaPrincipalCADASTROFUNCIONARIOSMENU;
+    private javax.swing.JMenu TelaPrincipalCADASTROMENU;
     private javax.swing.JLabel TelaPrincipalDATA;
     private javax.swing.JLabel TelaPrincipalLOGO;
     private javax.swing.JMenuBar TelaPrincipalMENU;
@@ -267,6 +281,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem TelaPrincipalRELATORIOSSERVICOS;
     private javax.swing.JLabel TelaPrincipalUSUARIO;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
     // End of variables declaration//GEN-END:variables
 }
