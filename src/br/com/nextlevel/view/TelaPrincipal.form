@@ -9,29 +9,43 @@
             <Property name="text" type="java.lang.String" value="Cadastro/Funcion&#xe1;rio"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalCADASTROCLIENTE">
+            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROCLIENTEMENU">
               <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+C"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalCADASTROFUNCIONARIOS">
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalCADASTROCLIENTE">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Alt+C"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cliente"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROFUNCIONARIOSMENU">
               <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+U"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
-                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="Funcionarios"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaPrincipalCADASTROFUNCIONARIOSActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalCADASTROFUNCIONARIOS">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Alt+U"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaPrincipalCADASTROFUNCIONARIOSActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="TelaPrincipalPEDIDOS">
@@ -42,6 +56,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalPEDIDOSPEDIDOS">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pedidos"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalPEDIDOSNFE">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NF-e"/>
               </Properties>
             </MenuItem>
           </SubComponents>
