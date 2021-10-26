@@ -24,7 +24,7 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="TelaPrincipalCADASTROFUNCIONARIOSMENU">
+            <Menu class="javax.swing.JMenu" name="jMenu1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Funcionarios"/>
               </Properties>
@@ -56,11 +56,6 @@
             <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalPEDIDOSPEDIDOS">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pedidos"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalPEDIDOSNFE">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="NF-e"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -174,7 +169,7 @@
                   <Component id="jDesktopPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="TelaPrincipalLOGO" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="540" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
