@@ -114,6 +114,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalPEDIDOS.setText("Pedidos");
 
         TelaPrincipalPEDIDOSPEDIDOS.setText("Pedidos");
+        TelaPrincipalPEDIDOSPEDIDOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaPrincipalPEDIDOSPEDIDOSActionPerformed(evt);
+            }
+        });
         TelaPrincipalPEDIDOS.add(TelaPrincipalPEDIDOSPEDIDOS);
 
         TelaPrincipalMENU.add(TelaPrincipalPEDIDOS);
@@ -226,6 +231,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaClientes clientes = new TelaClientes();
         clientes.setVisible(true);
     }//GEN-LAST:event_TelaPrincipalCADASTROCLIENTEActionPerformed
+
+    private void TelaPrincipalPEDIDOSPEDIDOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalPEDIDOSPEDIDOSActionPerformed
+        // TODO add your handling code here:
+        TelaPedidos pedidos = new TelaPedidos();
+        pedidos.setVisible(true);
+    }//GEN-LAST:event_TelaPrincipalPEDIDOSPEDIDOSActionPerformed
 
     /**
      * @param args the command line arguments
