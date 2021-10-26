@@ -6,6 +6,10 @@
 package br.com.nextlevel.view;
 
 import br.com.nextlevel.jdbc.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -311,6 +315,30 @@ public class TelaClientes extends javax.swing.JFrame {
 
     private void ClienteIdentificadorButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteIdentificadorButtonNovoActionPerformed
         // TODO add your handling code here:
+//        Connection conexao = null;
+//        PreparedStatement pst = null;
+//        ResultSet rs = null;
+//         try {
+//            ConnectionFactory.getConnection();
+//            
+//            //tela com uma mensagem
+//            JOptionPane.showMessageDialog(null, "CONEXÃO BEM SUCEDIDA");
+//            
+//            String sql = "insert into clientes (idClientes, Funcionario_idFuncionarios, nome, email, cpf, telefone, endereco, entrega) values (?,?,?,?,?,?,?,?,?)";
+//            pst = conexao.prepareStatement(sql);
+//
+//            pst.setString(1, ClienteIdentificadorID.getText());
+//            pst.setString(2, ClienteIdentificadorCPF.getText());
+//            pst.setString(3, ClienteIdentificadorNome.getText());
+//            pst.setString(4, ClienteIdentificadorEmail.getText());
+//            pst.setString(5, ClienteIdentificadorTelefone.getText());
+//            rs = pst.executeQuery();
+//            
+//            
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+        
     }//GEN-LAST:event_ClienteIdentificadorButtonNovoActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
