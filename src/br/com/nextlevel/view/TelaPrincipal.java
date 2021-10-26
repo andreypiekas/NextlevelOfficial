@@ -83,6 +83,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         TelaPrincipalCADASTROFUNCIONARIOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         TelaPrincipalCADASTROFUNCIONARIOS.setText("Funcionários");
+        TelaPrincipalCADASTROFUNCIONARIOS.setEnabled(false);
         TelaPrincipalCADASTROFUNCIONARIOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelaPrincipalCADASTROFUNCIONARIOSActionPerformed(evt);
@@ -100,6 +101,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalMENU.add(TelaPrincipalPEDIDOS);
 
         TelaPrincipalRELATORIOS.setText("Relatórios");
+        TelaPrincipalRELATORIOS.setEnabled(false);
 
         TelaPrincipalRELATORIOSSERVICOS.setText("Serviços");
         TelaPrincipalRELATORIOS.add(TelaPrincipalRELATORIOSSERVICOS);
@@ -238,7 +240,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu TelaPrincipalAJUDA;
     private javax.swing.JMenu TelaPrincipalCADASTRO;
     private javax.swing.JMenuItem TelaPrincipalCADASTROCLIENTE;
-    private javax.swing.JMenuItem TelaPrincipalCADASTROFUNCIONARIOS;
+    public static javax.swing.JMenuItem TelaPrincipalCADASTROFUNCIONARIOS;
     private javax.swing.JLabel TelaPrincipalDATA;
     private javax.swing.JLabel TelaPrincipalLOGO;
     private javax.swing.JMenuBar TelaPrincipalMENU;
@@ -247,7 +249,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu TelaPrincipalPEDIDOS;
     private javax.swing.JMenuItem TelaPrincipalPEDIDOSPEDIDOS;
     private javax.swing.JMenuItem TelaPrincipalPEDIDOSSOBRE;
-    private javax.swing.JMenu TelaPrincipalRELATORIOS;
+    public static javax.swing.JMenu TelaPrincipalRELATORIOS;
     private javax.swing.JMenuItem TelaPrincipalRELATORIOSSERVICOS;
     private javax.swing.JLabel TelaPrincipalUSUARIO;
     private javax.swing.JDesktopPane jDesktopPane1;

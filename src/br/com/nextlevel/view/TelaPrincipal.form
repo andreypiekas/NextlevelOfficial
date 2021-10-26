@@ -23,10 +23,14 @@
                   <KeyStroke key="Alt+U"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaPrincipalCADASTROFUNCIONARIOSActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -45,7 +49,11 @@
         <Menu class="javax.swing.JMenu" name="TelaPrincipalRELATORIOS">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalRELATORIOSSERVICOS">
               <Properties>
