@@ -74,13 +74,30 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
             pst.setString(7, TelaFuncionariosUSUARIO.getText());
             pst.setString(8, TelaFuncionariosSENHA.getText());
             pst.setString(9, TelaFuncionariosCOMBOPERFIL.getSelectedItem().toString());
-            
-            //atualizando a tabela funcionarios com os dados novos do formulario
-            pst.executeUpdate();
-            
-            if (rs.next()) {
+
+            //verificando se os campos obrigatorios estao preenchidos
+            if (TelaFuncionariosID.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
 
             } else {
+
+                //atualizando a tabela funcionarios com os dados novos do formulario
+                //tela de confirmação de inserção de dados
+                int adicionado = pst.executeUpdate();
+                //teste para verificaer se a variavel está retornando valor
+                //System.out.println(adicionado);
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
+                    TelaFuncionariosID.setText(null);
+                    TelaFuncionariosNOME.setText(null);
+                    TelaFuncionariosEMAIL.setText(null);
+                    TelaFuncionariosENDERECO.setText(null);
+                    TelaFuncionariosBAIRRO.setText(null);
+                    TelaFuncionariosCIDADE.setText(null);
+                    TelaFuncionariosUSUARIO.setText(null);
+                    TelaFuncionariosSENHA.setText(null);
+                    TelaFuncionariosCOMBOPERFIL.setSelectedItem(null);
+                }
             }
 
         } catch (Exception e) {
@@ -119,29 +136,30 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonSEARCH = new javax.swing.JButton();
         TelaFuncionarioButtonUPDATE = new javax.swing.JButton();
         TelaFuncionarioButtonDELETE = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Funcionários");
 
-        jLabel1.setText("ID");
+        jLabel1.setText("* ID");
 
-        jLabel2.setText("Nome");
+        jLabel2.setText("* Nome");
 
         jLabel3.setText("Cidade");
 
-        jLabel4.setText("Email");
+        jLabel4.setText("* Email");
 
         jLabel5.setText("Endereço");
 
         jLabel6.setText("Bairro");
 
-        jLabel7.setText("Usuário");
+        jLabel7.setText("* Usuário");
 
-        jLabel8.setText("Senha");
+        jLabel8.setText("* Senha");
 
-        jLabel9.setText("Perfil");
+        jLabel9.setText("* Perfil");
 
         TelaFuncionariosID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +201,8 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonDELETE.setToolTipText("Deletar");
         TelaFuncionarioButtonDELETE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jLabel10.setText("* Campos Obrigatórios");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -190,7 +210,9 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,8 +259,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                                     .addComponent(TelaFuncionariosBAIRRO)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addComponent(TelaFuncionarioButtonDELETE)))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                                .addComponent(TelaFuncionarioButtonDELETE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18))))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {TelaFuncionarioButtonCREATE, TelaFuncionarioButtonDELETE, TelaFuncionarioButtonSEARCH, TelaFuncionarioButtonUPDATE});
@@ -249,7 +274,8 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TelaFuncionariosID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TelaFuncionariosID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TelaFuncionariosNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,6 +353,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TelaFuncionariosSENHA;
     private javax.swing.JTextField TelaFuncionariosUSUARIO;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
