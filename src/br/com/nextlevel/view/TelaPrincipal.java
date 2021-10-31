@@ -232,6 +232,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaClientes clientes = new TelaClientes();
         clientes.setVisible(true);
+        Desktop.add(clientes);
     }//GEN-LAST:event_TelaPrincipalCADASTROCLIENTEActionPerformed
 
     private void TelaPrincipalPEDIDOSPEDIDOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalPEDIDOSPEDIDOSActionPerformed
