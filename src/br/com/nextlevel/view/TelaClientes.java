@@ -7,6 +7,7 @@ package br.com.nextlevel.view;
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -36,8 +37,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesNUMEROENDERECO.setText(null);
         TelaClientesCOMPLEMENTO.setText(null);
         TelaClientesBAIRRO.setText(null);
-        TelaClientesCIDADE.setText(null);     
-        
+        TelaClientesCIDADE.setText(null);
+
     }
 
     private void adicionar() {
@@ -47,10 +48,10 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst.setString(1, TelaClientesNOME.getText());
             pst.setString(2, TelaClientesEMAIL.getText());
             pst.setString(3, TelaClientesCPF.getText());
-          //  pst.setString(3, TelaClientesCPF.getValue().toString());
-                        
+            //  pst.setString(3, TelaClientesCPF.getValue().toString());
+
             pst.setString(4, TelaClientesTELEFONE.getText());
-         //   pst.setString(4, TelaClientesTELEFONE.getValue().toString());
+            //   pst.setString(4, TelaClientesTELEFONE.getValue().toString());
             pst.setString(5, TelaClientesENTREGA.getText());
             pst.setString(6, TelaClientesCEP.getText());
             pst.setString(7, TelaClientesNUMEROENDERECO.getText());
@@ -79,6 +80,43 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+    }
+
+    //metodo para pesquisar clinte + filtro por nome
+    private void pesquisar_cliente() {
+        String sql = "select * from clientes where nome like ?";
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            // passando o conteudo da caixa de pesquisa para o ?
+            //o % é a continuacao da string sql
+            pst.setString(1, TelaClientesPESQUISAR.getText() + "%");
+            rs = pst.executeQuery();
+
+            ///utilizando a bliblioteca rs2xml.jar para preencher a tabela
+            TelaClientesTABELACLIENTES.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
+    //metodo para setar os campos do formulario com o conteudo da tabela
+    private void setar_campos() {
+        int setar = TelaClientesTABELACLIENTES.getSelectedRow();
+        TelaClientesNOME.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 1).toString());
+        TelaClientesEMAIL.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 2).toString());
+        TelaClientesCPF.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 3).toString());
+        TelaClientesTELEFONE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 4).toString());
+        TelaClientesENTREGA.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 5).toString());
+        TelaClientesCEP.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 6).toString());
+        TelaClientesRUA.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 7).toString());
+        TelaClientesNUMEROENDERECO.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 8).toString());
+        TelaClientesCOMPLEMENTO.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 9).toString());
+        TelaClientesBAIRRO.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 10).toString());
+        TelaClientesCIDADE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 11).toString());
+        TelaClientesComboESTADO.setSelectedItem(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 12).toString());
     }
 
     /**
@@ -192,6 +230,12 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         TelaClientesComboESTADO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
 
+        TelaClientesPESQUISAR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TelaClientesPESQUISARKeyReleased(evt);
+            }
+        });
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/pesquisar.png"))); // NOI18N
 
         jLabel16.setText("Rua");
@@ -207,6 +251,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TelaClientesTABELACLIENTES.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TelaClientesTABELACLIENTESMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TelaClientesTABELACLIENTES);
 
         jLabel13.setText("Entrega");
@@ -388,6 +437,20 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         adicionar();
     }//GEN-LAST:event_TelaClientesButtonADICIONARActionPerformed
+
+    private void TelaClientesPESQUISARKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TelaClientesPESQUISARKeyReleased
+        // TODO add your handling code here:
+        // o evento a baixo é do tipo enquanto for digitando em tempo real
+        pesquisar_cliente();
+
+    }//GEN-LAST:event_TelaClientesPESQUISARKeyReleased
+
+    private void TelaClientesTABELACLIENTESMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaClientesTABELACLIENTESMouseClicked
+        // TODO add your handling code here:
+
+        //evento que sera usado para setar os campos da tabela ao click do mouse
+        setar_campos();
+    }//GEN-LAST:event_TelaClientesTABELACLIENTESMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
