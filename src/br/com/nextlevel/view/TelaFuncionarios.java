@@ -26,6 +26,16 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         conexao = ConnectionFactory.getConnection();
     }
 
+    private void limpadados() {
+        TelaFuncionariosNOME.setText(null);
+        TelaFuncionariosEMAIL.setText(null);
+        TelaFuncionariosENDERECO.setText(null);
+        TelaFuncionariosBAIRRO.setText(null);
+        TelaFuncionariosCIDADE.setText(null);
+        TelaFuncionariosUSUARIO.setText(null);
+        TelaFuncionariosSENHA.setText(null);
+    }
+
     private void consultar() {
         String sql = "select * from funcionarios where idFuncionarios=?";
         try {
@@ -45,14 +55,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
                 //limpa o preenchimento dos campos
-                TelaFuncionariosNOME.setText(null);
-                TelaFuncionariosEMAIL.setText(null);
-                TelaFuncionariosENDERECO.setText(null);
-                TelaFuncionariosBAIRRO.setText(null);
-                TelaFuncionariosCIDADE.setText(null);
-                TelaFuncionariosUSUARIO.setText(null);
-                TelaFuncionariosSENHA.setText(null);
-                TelaFuncionariosCOMBOPERFIL.setSelectedItem(null);
+                limpadados();
 
             }
         } catch (Exception e) {
@@ -76,7 +79,8 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
             pst.setString(9, TelaFuncionariosCOMBOPERFIL.getSelectedItem().toString());
 
             //verificando se os campos obrigatorios estao preenchidos
-            if (TelaFuncionariosID.getText().isEmpty()) {
+            if (TelaFuncionariosID.getText().isEmpty() || TelaFuncionariosNOME.getText().isEmpty() || TelaFuncionariosEMAIL.getText().isEmpty()
+                    || TelaFuncionariosUSUARIO.getText().isEmpty() || TelaFuncionariosSENHA.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
 
             } else {
@@ -88,21 +92,51 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                 //System.out.println(adicionado);
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
-                    TelaFuncionariosID.setText(null);
-                    TelaFuncionariosNOME.setText(null);
-                    TelaFuncionariosEMAIL.setText(null);
-                    TelaFuncionariosENDERECO.setText(null);
-                    TelaFuncionariosBAIRRO.setText(null);
-                    TelaFuncionariosCIDADE.setText(null);
-                    TelaFuncionariosUSUARIO.setText(null);
-                    TelaFuncionariosSENHA.setText(null);
-                    TelaFuncionariosCOMBOPERFIL.setSelectedItem(null);
+                    limpadados();
                 }
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+    }
+
+    private void alterar() {
+        String sql = "update funcionarios set nome=?, email=?, endereco=?, bairro=?, cidade=?, usuario=?, senha=?, perfil=? where idFuncionarios=?";
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, TelaFuncionariosNOME.getText());
+            pst.setString(2, TelaFuncionariosEMAIL.getText());
+            pst.setString(3, TelaFuncionariosENDERECO.getText());
+            pst.setString(4, TelaFuncionariosBAIRRO.getText());
+            pst.setString(5, TelaFuncionariosCIDADE.getText());
+            pst.setString(6, TelaFuncionariosUSUARIO.getText());
+            pst.setString(7, TelaFuncionariosSENHA.getText());
+            pst.setString(8, TelaFuncionariosCOMBOPERFIL.getSelectedItem().toString());
+            pst.setString(9, TelaFuncionariosID.getText());
+
+            if (TelaFuncionariosID.getText().isEmpty() || TelaFuncionariosNOME.getText().isEmpty() || TelaFuncionariosEMAIL.getText().isEmpty()
+                    || TelaFuncionariosUSUARIO.getText().isEmpty() || TelaFuncionariosSENHA.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
+
+            } else {
+
+                //atualizando a tabela funcionarios com os dados novos do formulario
+                //tela de confirmação de alteracao de dados
+                int adicionado = pst.executeUpdate();
+                //teste para verificaer se a variavel está retornando valor
+                //System.out.println(adicionado);
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso!");
+                    limpadados();
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
     }
 
     /**
@@ -196,6 +230,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonUPDATE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/edit.png"))); // NOI18N
         TelaFuncionarioButtonUPDATE.setToolTipText("Editar");
         TelaFuncionarioButtonUPDATE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TelaFuncionarioButtonUPDATE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionarioButtonUPDATEActionPerformed(evt);
+            }
+        });
 
         TelaFuncionarioButtonDELETE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/delete.png"))); // NOI18N
         TelaFuncionarioButtonDELETE.setToolTipText("Deletar");
@@ -336,6 +375,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         adicionar();
     }//GEN-LAST:event_TelaFuncionarioButtonCREATEActionPerformed
+
+    private void TelaFuncionarioButtonUPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionarioButtonUPDATEActionPerformed
+        // TODO add your handling code here:
+        alterar();
+    }//GEN-LAST:event_TelaFuncionarioButtonUPDATEActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
