@@ -27,6 +27,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
     }
 
     private void limpadados() {
+        TelaFuncionariosID.setText(null);
         TelaFuncionariosNOME.setText(null);
         TelaFuncionariosEMAIL.setText(null);
         TelaFuncionariosENDERECO.setText(null);
@@ -53,7 +54,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                 TelaFuncionariosCOMBOPERFIL.setSelectedItem(rs.getString(9));
 
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+                JOptionPane.showMessageDialog(null, "Funcionário não encontrado!");
                 //limpa o preenchimento dos campos
                 limpadados();
 
@@ -91,7 +92,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                 //teste para verificaer se a variavel está retornando valor
                 //System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Funcionário adicionado com sucesso!");
                     limpadados();
                 }
             }
@@ -128,7 +129,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                 //teste para verificaer se a variavel está retornando valor
                 //System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Funcionário alterado com sucesso!");
                     limpadados();
                 }
             }
@@ -137,6 +138,28 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
 
+    }
+
+    private void remover() {
+        //confirmação de remocao
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma remoção do funcionário?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from funcionarios where idFuncionarios=?";
+            try {
+                pst = conexao.prepareStatement(sql);
+                pst.setString(1, TelaFuncionariosID.getText());
+                int apagado = pst.executeUpdate();
+                if (apagado > 0) {
+                    JOptionPane.showMessageDialog(null, "Usuário removido com sucesso!");
+                    limpadados();
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+        } else {
+        }
     }
 
     /**
@@ -239,6 +262,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonDELETE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/delete.png"))); // NOI18N
         TelaFuncionarioButtonDELETE.setToolTipText("Deletar");
         TelaFuncionarioButtonDELETE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TelaFuncionarioButtonDELETE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionarioButtonDELETEActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("* Campos Obrigatórios");
 
@@ -380,6 +408,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         alterar();
     }//GEN-LAST:event_TelaFuncionarioButtonUPDATEActionPerformed
+
+    private void TelaFuncionarioButtonDELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionarioButtonDELETEActionPerformed
+        // TODO add your handling code here:
+        remover();
+    }//GEN-LAST:event_TelaFuncionarioButtonDELETEActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
