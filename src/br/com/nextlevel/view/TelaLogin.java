@@ -7,6 +7,7 @@ package br.com.nextlevel.view;
 
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,13 +42,15 @@ public class TelaLogin extends javax.swing.JFrame {
                     this.dispose(); /// fecha o formulario de login ao abrir a tela principal
                     TelaPrincipal.TelaPrincipalRELATORIOS.setEnabled(true);
                     TelaPrincipal.TelaPrincipalCADASTROFUNCIONARIOS.setEnabled(true);
-                    conexao.close();
+                    TelaPrincipal.TelaPrincipalUSUARIO.setText(rs.getString(2));
+                    TelaPrincipal.TelaPrincipalUSUARIO.setForeground(Color.red);
                 } else {
                     TelaPrincipal principal = new TelaPrincipal();
                     principal.setVisible(true);
                     this.dispose(); /// fecha o formulario de login ao abrir a tela principal
-                    conexao.close();
+                    TelaPrincipal.TelaPrincipalUSUARIO.setText(rs.getString(2));
                 }
+                conexao.close();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senhas Inválido");
             }
