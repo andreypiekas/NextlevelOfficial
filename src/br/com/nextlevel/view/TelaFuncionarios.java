@@ -1,15 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package br.com.nextlevel.view;
 
 /**
  *
- * @author andrey.piekas
+ * @author andre
  */
-public class TelaFuncionarios extends javax.swing.JFrame {
+public class TelaFuncionarios extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaFuncionarios
@@ -27,167 +26,222 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TelaFuncionariosID = new javax.swing.JLabel();
-        TelaFuncionariosFIELDID = new javax.swing.JTextField();
-        TelaFuncionariosNOME = new javax.swing.JLabel();
-        TelaFuncionariosFieldNOME = new javax.swing.JTextField();
-        TelaFuncionariosEMAIL = new javax.swing.JLabel();
-        TelaFuncionariosFieldEMAIL = new javax.swing.JTextField();
-        TelaFuncionariosTELEFONE = new javax.swing.JLabel();
-        TelaFuncionariosENDERECO = new javax.swing.JLabel();
-        TelaFuncionariosFieldENDERECO = new javax.swing.JTextField();
-        TelaFuncionariosFieldBAIRRO = new javax.swing.JTextField();
-        TelaFuncionariosBAIRRO = new javax.swing.JLabel();
-        TelaFuncionariosFieldTELEFONE = new javax.swing.JFormattedTextField();
-        TelaFuncionariosFieldCIDADE = new javax.swing.JTextField();
-        TelaFuncionariosCIDADE = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        TelaFuncionariosID = new javax.swing.JTextField();
+        TelaFuncionariosNOME = new javax.swing.JTextField();
+        TelaFuncionariosEMAIL = new javax.swing.JTextField();
+        TelaFuncionariosBAIRRO = new javax.swing.JTextField();
+        TelaFuncionariosCIDADE = new javax.swing.JTextField();
+        TelaFuncionariosUSUARIO = new javax.swing.JTextField();
+        TelaFuncionariosSENHA = new javax.swing.JTextField();
+        TelaFuncionariosENDERECO = new javax.swing.JTextField();
+        TelaFuncionariosCOMBOPERFIL = new javax.swing.JComboBox<>();
+        TelaFuncionarioButtonCREATE = new javax.swing.JButton();
+        TelaFuncionarioButtonSEARCH = new javax.swing.JButton();
+        TelaFuncionarioButtonUPDATE = new javax.swing.JButton();
+        TelaFuncionarioButtonDELETE = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Funcionários");
-        setResizable(false);
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Funcionários");
 
-        TelaFuncionariosID.setText("ID");
+        jLabel1.setText("ID");
 
-        TelaFuncionariosNOME.setText("Nome");
+        jLabel2.setText("Nome");
 
-        TelaFuncionariosEMAIL.setText("Email");
+        jLabel3.setText("Cidade");
 
-        TelaFuncionariosTELEFONE.setText("Telefone");
+        jLabel4.setText("Email");
 
-        TelaFuncionariosENDERECO.setText("Endereço");
+        jLabel5.setText("Endereço");
 
-        TelaFuncionariosBAIRRO.setText("Bairro");
+        jLabel6.setText("Bairro");
 
-        try {
-            TelaFuncionariosFieldTELEFONE.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) # ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        jLabel7.setText("Usuário");
 
-        TelaFuncionariosCIDADE.setText("Cidade");
+        jLabel8.setText("Senha");
+
+        jLabel9.setText("Perfil");
+
+        TelaFuncionariosID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionariosIDActionPerformed(evt);
+            }
+        });
+
+        TelaFuncionariosCOMBOPERFIL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "user" }));
+        TelaFuncionariosCOMBOPERFIL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionariosCOMBOPERFILActionPerformed(evt);
+            }
+        });
+
+        TelaFuncionarioButtonCREATE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/create.png"))); // NOI18N
+        TelaFuncionarioButtonCREATE.setToolTipText("Adicionar");
+        TelaFuncionarioButtonCREATE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TelaFuncionarioButtonCREATE.setPreferredSize(new java.awt.Dimension(60, 60));
+
+        TelaFuncionarioButtonSEARCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/search.png"))); // NOI18N
+        TelaFuncionarioButtonSEARCH.setToolTipText("Consultar");
+        TelaFuncionarioButtonSEARCH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        TelaFuncionarioButtonUPDATE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/edit.png"))); // NOI18N
+        TelaFuncionarioButtonUPDATE.setToolTipText("Editar");
+        TelaFuncionarioButtonUPDATE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        TelaFuncionarioButtonDELETE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/delete.png"))); // NOI18N
+        TelaFuncionarioButtonDELETE.setToolTipText("Deletar");
+        TelaFuncionarioButtonDELETE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel1))
+                                    .addGap(25, 25, 25))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel3))
+                                    .addGap(18, 18, 18)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(TelaFuncionariosID)
+                                .addComponent(jLabel9)
+                                .addGap(40, 40, 40)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TelaFuncionariosUSUARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TelaFuncionariosENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TelaFuncionariosCOMBOPERFIL, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(TelaFuncionariosNOME, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                        .addComponent(TelaFuncionariosEMAIL)
+                                        .addComponent(TelaFuncionariosID, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TelaFuncionariosCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(61, 61, 61)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel6)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(TelaFuncionarioButtonCREATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(TelaFuncionarioButtonSEARCH)
+                                .addGap(70, 70, 70)
+                                .addComponent(TelaFuncionarioButtonUPDATE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(TelaFuncionariosFIELDID, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TelaFuncionariosNOME)
-                                .addGap(18, 18, 18)
-                                .addComponent(TelaFuncionariosFieldNOME, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(TelaFuncionariosEMAIL)
-                                .addGap(18, 18, 18)
-                                .addComponent(TelaFuncionariosFieldEMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(TelaFuncionariosTELEFONE)
-                                .addGap(18, 18, 18)
-                                .addComponent(TelaFuncionariosFieldTELEFONE, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(TelaFuncionariosENDERECO)
-                                .addGap(18, 18, 18)
-                                .addComponent(TelaFuncionariosFieldENDERECO)))
-                        .addGap(86, 86, 86))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TelaFuncionariosBAIRRO)
-                        .addGap(18, 18, 18)
-                        .addComponent(TelaFuncionariosFieldBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(TelaFuncionariosCIDADE)
-                        .addGap(18, 18, 18)
-                        .addComponent(TelaFuncionariosFieldCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TelaFuncionariosSENHA, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                    .addComponent(TelaFuncionariosBAIRRO)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(TelaFuncionarioButtonDELETE)))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {TelaFuncionarioButtonCREATE, TelaFuncionarioButtonDELETE, TelaFuncionarioButtonSEARCH, TelaFuncionarioButtonUPDATE});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(TelaFuncionariosID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TelaFuncionariosNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(TelaFuncionariosEMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(TelaFuncionariosBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelaFuncionariosENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TelaFuncionariosCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(TelaFuncionariosUSUARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelaFuncionariosSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TelaFuncionariosCOMBOPERFIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelaFuncionariosID)
-                    .addComponent(TelaFuncionariosFIELDID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TelaFuncionariosFieldNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TelaFuncionariosNOME))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelaFuncionariosEMAIL)
-                    .addComponent(TelaFuncionariosFieldEMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TelaFuncionariosTELEFONE)
-                    .addComponent(TelaFuncionariosFieldTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelaFuncionariosENDERECO)
-                    .addComponent(TelaFuncionariosFieldENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TelaFuncionariosFieldBAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TelaFuncionariosBAIRRO)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TelaFuncionariosFieldCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TelaFuncionariosCIDADE)))
-                .addContainerGap(272, Short.MAX_VALUE))
+                    .addComponent(TelaFuncionarioButtonCREATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelaFuncionarioButtonSEARCH, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelaFuncionarioButtonUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelaFuncionarioButtonDELETE, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58))
         );
 
-        pack();
-        setLocationRelativeTo(null);
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {TelaFuncionarioButtonCREATE, TelaFuncionarioButtonDELETE, TelaFuncionarioButtonSEARCH, TelaFuncionarioButtonUPDATE});
+
+        setBounds(0, 0, 751, 583);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void TelaFuncionariosCOMBOPERFILActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionariosCOMBOPERFILActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelaFuncionariosCOMBOPERFILActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaFuncionarios().setVisible(true);
-            }
-        });
-    }
+    private void TelaFuncionariosIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionariosIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelaFuncionariosIDActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel TelaFuncionariosBAIRRO;
-    private javax.swing.JLabel TelaFuncionariosCIDADE;
-    private javax.swing.JLabel TelaFuncionariosEMAIL;
-    private javax.swing.JLabel TelaFuncionariosENDERECO;
-    private javax.swing.JTextField TelaFuncionariosFIELDID;
-    private javax.swing.JTextField TelaFuncionariosFieldBAIRRO;
-    private javax.swing.JTextField TelaFuncionariosFieldCIDADE;
-    private javax.swing.JTextField TelaFuncionariosFieldEMAIL;
-    private javax.swing.JTextField TelaFuncionariosFieldENDERECO;
-    private javax.swing.JTextField TelaFuncionariosFieldNOME;
-    private javax.swing.JFormattedTextField TelaFuncionariosFieldTELEFONE;
-    private javax.swing.JLabel TelaFuncionariosID;
-    private javax.swing.JLabel TelaFuncionariosNOME;
-    private javax.swing.JLabel TelaFuncionariosTELEFONE;
+    private javax.swing.JButton TelaFuncionarioButtonCREATE;
+    private javax.swing.JButton TelaFuncionarioButtonDELETE;
+    private javax.swing.JButton TelaFuncionarioButtonSEARCH;
+    private javax.swing.JButton TelaFuncionarioButtonUPDATE;
+    private javax.swing.JTextField TelaFuncionariosBAIRRO;
+    private javax.swing.JTextField TelaFuncionariosCIDADE;
+    private javax.swing.JComboBox<String> TelaFuncionariosCOMBOPERFIL;
+    private javax.swing.JTextField TelaFuncionariosEMAIL;
+    private javax.swing.JTextField TelaFuncionariosENDERECO;
+    private javax.swing.JTextField TelaFuncionariosID;
+    private javax.swing.JTextField TelaFuncionariosNOME;
+    private javax.swing.JTextField TelaFuncionariosSENHA;
+    private javax.swing.JTextField TelaFuncionariosUSUARIO;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
