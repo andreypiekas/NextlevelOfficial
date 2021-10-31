@@ -6,15 +6,85 @@ package br.com.nextlevel.view;
 
 /**
  *
- * @author andre
+ * @author andrey piekas
  */
+import java.sql.*;
+import br.com.nextlevel.jdbc.ConnectionFactory;
+import javax.swing.JOptionPane;
+
 public class TelaFuncionarios extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaFuncionarios
      */
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+
     public TelaFuncionarios() {
         initComponents();
+        conexao = ConnectionFactory.getConnection();
+    }
+
+    private void consultar() {
+        String sql = "select * from funcionarios where idFuncionarios=?";
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, TelaFuncionariosID.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                TelaFuncionariosNOME.setText(rs.getString(2));
+                TelaFuncionariosEMAIL.setText(rs.getString(3));
+                TelaFuncionariosENDERECO.setText(rs.getString(4));
+                TelaFuncionariosBAIRRO.setText(rs.getString(5));
+                TelaFuncionariosCIDADE.setText(rs.getString(6));
+                TelaFuncionariosUSUARIO.setText(rs.getString(7));
+                TelaFuncionariosSENHA.setText(rs.getString(8));
+                TelaFuncionariosCOMBOPERFIL.setSelectedItem(rs.getString(9));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+                //limpa o preenchimento dos campos
+                TelaFuncionariosNOME.setText(null);
+                TelaFuncionariosEMAIL.setText(null);
+                TelaFuncionariosENDERECO.setText(null);
+                TelaFuncionariosBAIRRO.setText(null);
+                TelaFuncionariosCIDADE.setText(null);
+                TelaFuncionariosUSUARIO.setText(null);
+                TelaFuncionariosSENHA.setText(null);
+                TelaFuncionariosCOMBOPERFIL.setSelectedItem(null);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
+    private void adicionar() {
+        String sql = "insert into funcionarios (idFuncionarios, nome, email, endereco, bairro, cidade, usuario, senha, perfil) values (?,?,?,?,?,?,?,?,?)";
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, TelaFuncionariosID.getText());
+            pst.setString(2, TelaFuncionariosID.getText());
+            pst.setString(3, TelaFuncionariosID.getText());
+            pst.setString(4, TelaFuncionariosID.getText());
+            pst.setString(5, TelaFuncionariosID.getText());
+            pst.setString(6, TelaFuncionariosID.getText());
+            pst.setString(7, TelaFuncionariosID.getText());
+            pst.setString(8, TelaFuncionariosID.getText());
+            pst.setString(9, TelaFuncionariosID.getText());
+            
+            rs = pst.executeQuery();
+            
+            if (rs.next()) {
+
+            } else {
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -93,6 +163,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonSEARCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/search.png"))); // NOI18N
         TelaFuncionarioButtonSEARCH.setToolTipText("Consultar");
         TelaFuncionarioButtonSEARCH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TelaFuncionarioButtonSEARCH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionarioButtonSEARCHActionPerformed(evt);
+            }
+        });
 
         TelaFuncionarioButtonUPDATE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/edit.png"))); // NOI18N
         TelaFuncionarioButtonUPDATE.setToolTipText("Editar");
@@ -155,7 +230,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                                     .addComponent(TelaFuncionariosSENHA, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                                     .addComponent(TelaFuncionariosBAIRRO)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
+                                .addGap(53, 53, 53)
                                 .addComponent(TelaFuncionarioButtonDELETE)))))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
@@ -198,7 +273,7 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
                     .addComponent(TelaFuncionariosCOMBOPERFIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TelaFuncionarioButtonCREATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TelaFuncionarioButtonSEARCH, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TelaFuncionarioButtonUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,6 +293,12 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
     private void TelaFuncionariosIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionariosIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TelaFuncionariosIDActionPerformed
+
+    private void TelaFuncionarioButtonSEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionarioButtonSEARCHActionPerformed
+        // TODO add your handling code here:
+        consultar();
+
+    }//GEN-LAST:event_TelaFuncionarioButtonSEARCHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
