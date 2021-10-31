@@ -66,16 +66,17 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         try {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, TelaFuncionariosID.getText());
-            pst.setString(2, TelaFuncionariosID.getText());
-            pst.setString(3, TelaFuncionariosID.getText());
-            pst.setString(4, TelaFuncionariosID.getText());
-            pst.setString(5, TelaFuncionariosID.getText());
-            pst.setString(6, TelaFuncionariosID.getText());
-            pst.setString(7, TelaFuncionariosID.getText());
-            pst.setString(8, TelaFuncionariosID.getText());
-            pst.setString(9, TelaFuncionariosID.getText());
+            pst.setString(2, TelaFuncionariosNOME.getText());
+            pst.setString(3, TelaFuncionariosEMAIL.getText());
+            pst.setString(4, TelaFuncionariosENDERECO.getText());
+            pst.setString(5, TelaFuncionariosBAIRRO.getText());
+            pst.setString(6, TelaFuncionariosCIDADE.getText());
+            pst.setString(7, TelaFuncionariosUSUARIO.getText());
+            pst.setString(8, TelaFuncionariosSENHA.getText());
+            pst.setString(9, TelaFuncionariosCOMBOPERFIL.getSelectedItem().toString());
             
-            rs = pst.executeQuery();
+            //atualizando a tabela funcionarios com os dados novos do formulario
+            pst.executeUpdate();
             
             if (rs.next()) {
 
@@ -159,6 +160,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         TelaFuncionarioButtonCREATE.setToolTipText("Adicionar");
         TelaFuncionarioButtonCREATE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TelaFuncionarioButtonCREATE.setPreferredSize(new java.awt.Dimension(60, 60));
+        TelaFuncionarioButtonCREATE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaFuncionarioButtonCREATEActionPerformed(evt);
+            }
+        });
 
         TelaFuncionarioButtonSEARCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/search.png"))); // NOI18N
         TelaFuncionarioButtonSEARCH.setToolTipText("Consultar");
@@ -299,6 +305,11 @@ public class TelaFuncionarios extends javax.swing.JInternalFrame {
         consultar();
 
     }//GEN-LAST:event_TelaFuncionarioButtonSEARCHActionPerformed
+
+    private void TelaFuncionarioButtonCREATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaFuncionarioButtonCREATEActionPerformed
+        // TODO add your handling code here:
+        adicionar();
+    }//GEN-LAST:event_TelaFuncionarioButtonCREATEActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
