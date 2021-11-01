@@ -21,7 +21,7 @@ public class ConnectionFactory {
         String driver = "com.mysql.jdbc.Driver";
 
         //Informacoes referente ao banco de dados
-        final String url = "jdbc:mysql: //localhost:3306/nextlevelpiekas?verifyServerCertificate=false&useSSL=true";
+        final String url = "jdbc:mysql: //localhost:3306/nextleveloficial?verifyServerCertificate=false&useSSL=true";
         final String user = "andreypiekas";
         final String password = "piekas123";
 
