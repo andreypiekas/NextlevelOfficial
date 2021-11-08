@@ -67,6 +67,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalDATA.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         TelaPrincipalDATA.setText("Data");
 
+        Desktop.setBackground(new java.awt.Color(153, 153, 153));
+        Desktop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Desktop.setPreferredSize(new java.awt.Dimension(751, 583));
 
         TelaPrincipalLOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/8fb43566dc0e49c08c189576a3027a4e.png"))); // NOI18N
@@ -85,8 +87,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addGap(0, 539, Short.MAX_VALUE)
-                .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(533, Short.MAX_VALUE)
+                .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         TelaPrincipalCADASTRO.setText("Cadastro/Funcionário");
