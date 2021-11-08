@@ -33,10 +33,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TelaPrincipalLOGO = new javax.swing.JLabel();
         TelaPrincipalUSUARIO = new javax.swing.JLabel();
         TelaPrincipalDATA = new javax.swing.JLabel();
         Desktop = new javax.swing.JDesktopPane();
+        TelaPrincipalLOGO = new javax.swing.JLabel();
         TelaPrincipalMENU = new javax.swing.JMenuBar();
         TelaPrincipalCADASTRO = new javax.swing.JMenu();
         TelaPrincipalCADASTROMENU = new javax.swing.JMenu();
@@ -61,8 +61,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        TelaPrincipalLOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/8fb43566dc0e49c08c189576a3027a4e.png"))); // NOI18N
-
         TelaPrincipalUSUARIO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         TelaPrincipalUSUARIO.setText("Usuário");
 
@@ -71,15 +69,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Desktop.setPreferredSize(new java.awt.Dimension(751, 583));
 
+        TelaPrincipalLOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/8fb43566dc0e49c08c189576a3027a4e.png"))); // NOI18N
+
+        Desktop.setLayer(TelaPrincipalLOGO, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 751, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
+                .addGap(0, 539, Short.MAX_VALUE)
+                .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         TelaPrincipalCADASTRO.setText("Cadastro/Funcionário");
@@ -167,31 +174,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TelaPrincipalUSUARIO)
                         .addGap(713, 713, 713)
-                        .addComponent(TelaPrincipalDATA))
-                    .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                        .addComponent(TelaPrincipalDATA)
+                        .addGap(0, 276, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TelaPrincipalDATA)
                     .addComponent(TelaPrincipalUSUARIO))
                 .addGap(14, 14, 14))
         );
 
-        setSize(new java.awt.Dimension(1085, 671));
+        setSize(new java.awt.Dimension(1085, 680));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
