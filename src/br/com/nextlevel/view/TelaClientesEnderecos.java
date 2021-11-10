@@ -7,7 +7,7 @@ package br.com.nextlevel.view;
 
 /**
  *
- * @author andrey.piekas
+ * @author andrey.piekas@gmail.com
  */
 public class TelaClientesEnderecos extends javax.swing.JFrame {
 
