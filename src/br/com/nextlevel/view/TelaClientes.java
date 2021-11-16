@@ -136,6 +136,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst.setString(10, TelaClientesBAIRRO.getText());
             pst.setString(11, TelaClientesCIDADE.getText());
             pst.setString(12, TelaClientesComboESTADO.getSelectedItem().toString());
+            pst.setString(13, TelaClientesNOME.getText());
 
             if (TelaClientesNOME.getText().isEmpty() || TelaClientesTELEFONE.getText().isEmpty() || TelaClientesEMAIL.getText().isEmpty()
                     || TelaClientesCPF.getText().isEmpty()) {
