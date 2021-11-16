@@ -118,6 +118,49 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesCIDADE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 11).toString());
         TelaClientesComboESTADO.setSelectedItem(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 12).toString());
     }
+    
+    
+    private void alterar() {
+        String sql = "update clientes set nome=?, email=?, cpf=?, telefone=?, entrega=?, cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where nome=?";
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, TelaClientesNOME.getText());
+            pst.setString(2, TelaClientesEMAIL.getText());
+            pst.setString(3, TelaClientesCPF.getText());
+            pst.setString(4, TelaClientesTELEFONE.getText());
+            pst.setString(5, TelaClientesENTREGA.getText());
+            pst.setString(6, TelaClientesCEP.getText());
+            pst.setString(7, TelaClientesRUA.getText());
+            pst.setString(7, TelaClientesNUMEROENDERECO.getText());
+            pst.setString(7, TelaClientesCOMPLEMENTO.getText());
+            pst.setString(7, TelaClientesBAIRRO.getText());
+            pst.setString(7, TelaClientesCIDADE.getText());
+            pst.setString(8, TelaClientesComboESTADO.getSelectedItem().toString());
+
+            if (TelaFuncionariosID.getText().isEmpty() || TelaFuncionariosNOME.getText().isEmpty() || TelaFuncionariosEMAIL.getText().isEmpty()
+                    || TelaFuncionariosUSUARIO.getText().isEmpty() || TelaFuncionariosSENHA.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
+
+            } else {
+
+                //atualizando a tabela funcionarios com os dados novos do formulario
+                //tela de confirmação de alteracao de dados
+                int adicionado = pst.executeUpdate();
+                //teste para verificaer se a variavel está retornando valor
+                //System.out.println(adicionado);
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(null, "Funcionário alterado com sucesso!");
+                    limpadados();
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
