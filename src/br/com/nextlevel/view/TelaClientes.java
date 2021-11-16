@@ -205,6 +205,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesButtonREMOVER = new javax.swing.JButton();
         TelaClientesButtonEDITAR = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        TelaClientesID = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -329,6 +331,10 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             }
         });
 
+        TelaClientesID.setEnabled(false);
+
+        jLabel14.setText("ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -382,6 +388,10 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(TelaClientesID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29))
                     .addGroup(layout.createSequentialGroup()
@@ -423,14 +433,18 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(TelaClientesPESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(TelaClientesID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel14))
+                            .addComponent(jLabel1))))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
@@ -551,6 +565,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> TelaClientesComboESTADO;
     private javax.swing.JTextField TelaClientesEMAIL;
     private javax.swing.JTextField TelaClientesENTREGA;
+    private javax.swing.JTextField TelaClientesID;
     private javax.swing.JTextField TelaClientesNOME;
     private javax.swing.JTextField TelaClientesNUMEROENDERECO;
     private javax.swing.JTextField TelaClientesPESQUISAR;
@@ -563,6 +578,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
