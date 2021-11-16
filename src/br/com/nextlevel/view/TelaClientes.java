@@ -118,8 +118,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesCIDADE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 11).toString());
         TelaClientesComboESTADO.setSelectedItem(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 12).toString());
     }
-    
-    
+
     private void alterar() {
         String sql = "update clientes set nome=?, email=?, cpf=?, telefone=?, entrega=?, cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where nome=?";
 
@@ -132,25 +131,25 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst.setString(5, TelaClientesENTREGA.getText());
             pst.setString(6, TelaClientesCEP.getText());
             pst.setString(7, TelaClientesRUA.getText());
-            pst.setString(7, TelaClientesNUMEROENDERECO.getText());
-            pst.setString(7, TelaClientesCOMPLEMENTO.getText());
-            pst.setString(7, TelaClientesBAIRRO.getText());
-            pst.setString(7, TelaClientesCIDADE.getText());
-            pst.setString(8, TelaClientesComboESTADO.getSelectedItem().toString());
+            pst.setString(8, TelaClientesNUMEROENDERECO.getText());
+            pst.setString(9, TelaClientesCOMPLEMENTO.getText());
+            pst.setString(10, TelaClientesBAIRRO.getText());
+            pst.setString(11, TelaClientesCIDADE.getText());
+            pst.setString(12, TelaClientesComboESTADO.getSelectedItem().toString());
 
-            if (TelaFuncionariosID.getText().isEmpty() || TelaFuncionariosNOME.getText().isEmpty() || TelaFuncionariosEMAIL.getText().isEmpty()
-                    || TelaFuncionariosUSUARIO.getText().isEmpty() || TelaFuncionariosSENHA.getText().isEmpty()) {
+            if (TelaClientesNOME.getText().isEmpty() || TelaClientesTELEFONE.getText().isEmpty() || TelaClientesEMAIL.getText().isEmpty()
+                    || TelaClientesCPF.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
 
             } else {
 
-                //atualizando a tabela funcionarios com os dados novos do formulario
+                //atualizando a tabela clientes com os dados novos do formulario
                 //tela de confirmação de alteracao de dados
                 int adicionado = pst.executeUpdate();
                 //teste para verificaer se a variavel está retornando valor
                 //System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Funcionário alterado com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!");
                     limpadados();
                 }
             }
@@ -160,7 +159,6 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         }
 
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -317,6 +315,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         TelaClientesButtonEDITAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/edit.png"))); // NOI18N
         TelaClientesButtonEDITAR.setPreferredSize(new java.awt.Dimension(60, 60));
+        TelaClientesButtonEDITAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaClientesButtonEDITARActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Endereços");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -522,13 +525,17 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             rs = pst.executeQuery();
             TelaClientesEnderecos enderecos = new TelaClientesEnderecos();
             enderecos.setVisible(true);
-            
 
         } catch (Exception e) {
         }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TelaClientesButtonEDITARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesButtonEDITARActionPerformed
+        // TODO add your handling code here:
+        alterar();
+    }//GEN-LAST:event_TelaClientesButtonEDITARActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
