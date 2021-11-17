@@ -42,7 +42,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     }
 
     private void adicionar() {
-        String sql = "insert into clientes (nome, email, cpf, telefone, entrega, cep, numero, complemento, bairro, cidade, estado) values (?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into clientes (nome, email, cpf, telefone, entrega, cep, rua, numero, complemento, bairro, cidade, estado) values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, TelaClientesNOME.getText());
@@ -54,11 +54,12 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             //   pst.setString(4, TelaClientesTELEFONE.getValue().toString());
             pst.setString(5, TelaClientesENTREGA.getText());
             pst.setString(6, TelaClientesCEP.getText());
-            pst.setString(7, TelaClientesNUMEROENDERECO.getText());
-            pst.setString(8, TelaClientesCOMPLEMENTO.getText());
-            pst.setString(9, TelaClientesBAIRRO.getText());
-            pst.setString(10, TelaClientesCIDADE.getText());
-            pst.setString(11, TelaClientesComboESTADO.getSelectedItem().toString());
+            pst.setString(7, TelaClientesRUA.getText());
+            pst.setString(8, TelaClientesNUMEROENDERECO.getText());
+            pst.setString(9, TelaClientesCOMPLEMENTO.getText());
+            pst.setString(10, TelaClientesBAIRRO.getText());
+            pst.setString(11, TelaClientesCIDADE.getText());
+            pst.setString(12, TelaClientesComboESTADO.getSelectedItem().toString());
 
             //verificando se os campos obrigatorios estao preenchidos
             if (TelaClientesNOME.getText().isEmpty() || TelaClientesCIDADE.getText().isEmpty()) {
@@ -105,6 +106,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     //metodo para setar os campos do formulario com o conteudo da tabela
     private void setar_campos() {
         int setar = TelaClientesTABELACLIENTES.getSelectedRow();
+        TelaClientesID.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 0).toString());
         TelaClientesNOME.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 1).toString());
         TelaClientesEMAIL.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 2).toString());
         TelaClientesCPF.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 3).toString());
@@ -120,7 +122,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     }
 
     private void alterar() {
-        String sql = "update clientes set nome=?, email=?, cpf=?, telefone=?, entrega=?, cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where nome=?";
+        String sql = "update clientes set nome=?, email=?, cpf=?, telefone=?, entrega=?, cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where idClientes=?";
 
         try {
             pst = conexao.prepareStatement(sql);
@@ -136,7 +138,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst.setString(10, TelaClientesBAIRRO.getText());
             pst.setString(11, TelaClientesCIDADE.getText());
             pst.setString(12, TelaClientesComboESTADO.getSelectedItem().toString());
-            pst.setString(13, TelaClientesNOME.getText());
+            pst.setString(13, TelaClientesID.getText());
 
             if (TelaClientesNOME.getText().isEmpty() || TelaClientesTELEFONE.getText().isEmpty() || TelaClientesEMAIL.getText().isEmpty()
                     || TelaClientesCPF.getText().isEmpty()) {
@@ -390,8 +392,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14)
                         .addGap(18, 18, 18)
-                        .addComponent(TelaClientesID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)
+                        .addComponent(TelaClientesID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29))
                     .addGroup(layout.createSequentialGroup()
