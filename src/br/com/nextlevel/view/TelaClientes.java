@@ -119,11 +119,10 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesBAIRRO.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 10).toString());
         TelaClientesCIDADE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 11).toString());
         TelaClientesComboESTADO.setSelectedItem(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 12).toString());
-        
+
         ///
         TelaClientesButtonADICIONAR.setEnabled(false);
-        
-        
+
     }
 
     private void alterar() {
@@ -167,6 +166,29 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
 
+    }
+
+    private void remover() {
+        //confirmação de remocao
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma remoção do Cliente?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from clientes where idClientes=?";
+            try {
+                pst = conexao.prepareStatement(sql);
+                pst.setString(1, TelaClientesID.getText());
+                int apagado = pst.executeUpdate();
+                if (apagado > 0) {
+                    JOptionPane.showMessageDialog(null, "Cliente removido com sucesso!");
+                    limpadados();
+                    TelaClientesButtonADICIONAR.setEnabled(true);
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+        } else {
+        }
     }
 
     /**
@@ -323,6 +345,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         TelaClientesButtonREMOVER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/delete.png"))); // NOI18N
         TelaClientesButtonREMOVER.setPreferredSize(new java.awt.Dimension(60, 60));
+        TelaClientesButtonREMOVER.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaClientesButtonREMOVERActionPerformed(evt);
+            }
+        });
 
         TelaClientesButtonEDITAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/edit.png"))); // NOI18N
         TelaClientesButtonEDITAR.setPreferredSize(new java.awt.Dimension(60, 60));
@@ -559,6 +586,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         alterar();
     }//GEN-LAST:event_TelaClientesButtonEDITARActionPerformed
+
+    private void TelaClientesButtonREMOVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesButtonREMOVERActionPerformed
+        // TODO add your handling code here:
+        remover();
+    }//GEN-LAST:event_TelaClientesButtonREMOVERActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
