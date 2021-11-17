@@ -119,6 +119,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesBAIRRO.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 10).toString());
         TelaClientesCIDADE.setText(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 11).toString());
         TelaClientesComboESTADO.setSelectedItem(TelaClientesTABELACLIENTES.getModel().getValueAt(setar, 12).toString());
+        
+        ///
+        TelaClientesButtonADICIONAR.setEnabled(false);
+        
+        
     }
 
     private void alterar() {
@@ -154,6 +159,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!");
                     limpadados();
+                    TelaClientesButtonADICIONAR.setEnabled(true);
                 }
             }
 
