@@ -69,9 +69,9 @@ public class TelaLogin extends javax.swing.JFrame {
         //a linha abaixo ser de status de conexão
         //System.out.println(conexao);
         if (conexao != null) {
-            TelaLoginSTATUSBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/DBOK.png")));
+            TelaLoginSTATUSBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/DBOK.png"))); ///dbok
         } else {
-            TelaLoginSTATUSBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/DBerro.png")));
+            TelaLoginSTATUSBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/DBerro.png"))); ///dberro
         }
     }
 
@@ -113,8 +113,8 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TelaLoginSTATUSBD)
@@ -128,7 +128,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TelaLoginSENHA, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                             .addComponent(TelaLoginLOGIN))))
-                .addGap(65, 65, 65))
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +145,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TelaLoginButtonLOGIN)
                     .addComponent(TelaLoginSTATUSBD))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
