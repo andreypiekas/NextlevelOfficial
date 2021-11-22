@@ -43,6 +43,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalCADASTROCLIENTE = new javax.swing.JMenuItem();
         TelaPrincipalCADASTROFUNCIONARIOSMENU = new javax.swing.JMenu();
         TelaPrincipalCADASTROFUNCIONARIOS = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        TelaPrincipalCADASTROPRODUTO = new javax.swing.JMenuItem();
         TelaPrincipalPEDIDOS = new javax.swing.JMenu();
         TelaPrincipalPEDIDOSPEDIDOS = new javax.swing.JMenuItem();
         TelaPrincipalRELATORIOS = new javax.swing.JMenu();
@@ -122,6 +124,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalCADASTRO.add(TelaPrincipalCADASTROFUNCIONARIOSMENU);
 
         TelaPrincipalMENU.add(TelaPrincipalCADASTRO);
+
+        jMenu1.setText("Produto");
+
+        TelaPrincipalCADASTROPRODUTO.setText("Cadastrar");
+        TelaPrincipalCADASTROPRODUTO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaPrincipalCADASTROPRODUTOActionPerformed(evt);
+            }
+        });
+        jMenu1.add(TelaPrincipalCADASTROPRODUTO);
+
+        TelaPrincipalMENU.add(jMenu1);
 
         TelaPrincipalPEDIDOS.setText("Pedidos");
 
@@ -215,8 +229,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // solicitando a tela sobre
         TelaSobre sobre = new TelaSobre();
         sobre.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_TelaPrincipalPEDIDOSSOBREActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -231,7 +245,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //solicita ao usuário a confirmação de sair ou não
         int sair = JOptionPane.showConfirmDialog(null, "Certeza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
-        if (sair == JOptionPane.YES_OPTION){
+        if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_TelaPrincipalOPCOESSAIRActionPerformed
@@ -249,6 +263,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pedidos.setVisible(true);
         Desktop.add(pedidos);
     }//GEN-LAST:event_TelaPrincipalPEDIDOSPEDIDOSActionPerformed
+
+    private void TelaPrincipalCADASTROPRODUTOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalCADASTROPRODUTOActionPerformed
+        // TODO add your handling code here:
+
+        TelaProduto produto = new TelaProduto();
+        produto.setVisible(true);
+        Desktop.add(produto);
+    }//GEN-LAST:event_TelaPrincipalCADASTROPRODUTOActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +315,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenuItem TelaPrincipalCADASTROFUNCIONARIOS;
     private javax.swing.JMenu TelaPrincipalCADASTROFUNCIONARIOSMENU;
     private javax.swing.JMenu TelaPrincipalCADASTROMENU;
+    private javax.swing.JMenuItem TelaPrincipalCADASTROPRODUTO;
     private javax.swing.JLabel TelaPrincipalDATA;
     private javax.swing.JLabel TelaPrincipalLOGO;
     private javax.swing.JMenuBar TelaPrincipalMENU;
@@ -304,5 +327,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu TelaPrincipalRELATORIOS;
     private javax.swing.JMenuItem TelaPrincipalRELATORIOSSERVICOS;
     public static javax.swing.JLabel TelaPrincipalUSUARIO;
+    private javax.swing.JMenu jMenu1;
     // End of variables declaration//GEN-END:variables
 }
