@@ -7,6 +7,7 @@ package br.com.nextlevel.view;
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -28,6 +29,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     }
 
     private void limpadados() {
+        TelaClientesPESQUISAR.setText(null);
+        TelaClientesID.setText(null);
         TelaClientesNOME.setText(null);
         TelaClientesEMAIL.setText(null);
         TelaClientesCPF.setText(null);
@@ -38,6 +41,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesCOMPLEMENTO.setText(null);
         TelaClientesBAIRRO.setText(null);
         TelaClientesCIDADE.setText(null);
+        ((DefaultTableModel) TelaClientesTABELACLIENTES.getModel()).setRowCount(0);
 
     }
 
@@ -85,7 +89,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
     //metodo para pesquisar clinte + filtro por nome
     private void pesquisar_cliente() {
-        String sql = "select * from clientes where nome like ?";
+        // String sql = "select * from clientes where nome like ?";
+        String sql = "select idClientes as ID, nome as Nome, email as Email, cpf as CPF, telefone as Telefone, entrega as Entrega, cep as CEP, rua as Rua, numero as Numero, complemento as Compl, bairro as Bairro, cidade as Cidade, estado as Estado from clientes where nome like ?";
 
         try {
             pst = conexao.prepareStatement(sql);
@@ -315,17 +320,24 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         jLabel16.setText("Rua");
 
+        TelaClientesTABELACLIENTES = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         TelaClientesTABELACLIENTES.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nome", "Email", "CPF", "Telefone", "Entrega", "CEP", "Rua", "Número", "Compl", "Bairro", "Cidade", "Estado"
             }
         ));
+        TelaClientesTABELACLIENTES.setFocusable(false);
+        TelaClientesTABELACLIENTES.getTableHeader().setReorderingAllowed(false);
         TelaClientesTABELACLIENTES.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TelaClientesTABELACLIENTESMouseClicked(evt);
@@ -410,7 +422,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(TelaClientesENTREGA, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 373, Short.MAX_VALUE))
+                        .addGap(0, 378, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -531,7 +543,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 823, 593);
+        setBounds(0, 0, 828, 593);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TelaClientesNUMEROENDERECOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesNUMEROENDERECOActionPerformed

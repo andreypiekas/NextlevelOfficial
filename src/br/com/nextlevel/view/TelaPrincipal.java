@@ -247,6 +247,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaPedidos pedidos = new TelaPedidos();
         pedidos.setVisible(true);
+        Desktop.add(pedidos);
     }//GEN-LAST:event_TelaPrincipalPEDIDOSPEDIDOSActionPerformed
 
     /**
