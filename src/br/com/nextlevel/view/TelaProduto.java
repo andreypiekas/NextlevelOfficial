@@ -41,9 +41,6 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
 
-    /**
-     * Creates new form TelaProduto
-     */
     public TelaProduto() {
         initComponents();
         conexao = ConnectionFactory.getConnection();
@@ -82,6 +79,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!");
                     limpadados();
+                    pesquisar_produto();
                 }
             }
 
@@ -99,6 +97,27 @@ public class TelaProduto extends javax.swing.JInternalFrame {
             // passando o conteudo da caixa de pesquisa para o ?
             //o % é a continuacao da string sql
             pst.setString(1, TelaProdutoPESQUISAR.getText() + "%");
+            rs = pst.executeQuery();
+
+            ///utilizando a bliblioteca rs2xml.jar para preencher a tabela
+            TelaProdutoTABELAPRODUTO.setModel(DbUtils.resultSetToTableModel(rs));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+    
+    
+    private void pesquisar_produto_categoria() {
+        // String sql = "select * from clientes where nome like ?";
+        String sql = "select id as ID, nome as Nome, descricao as Descricao, valor as valor, peso as Peso, categoria as categoria from produto where categoria like ?";
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            // passando o conteudo da caixa de pesquisa para o ?
+            //o % é a continuacao da string sql
+            pst.setString(1, TelaProdutoCOMBOPESQUISACATEGORIA.getSelectedItem().toString());
             rs = pst.executeQuery();
 
             ///utilizando a bliblioteca rs2xml.jar para preencher a tabela
@@ -149,6 +168,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                 if (adicionado > 0) {
                     JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!");
                     limpadados();
+                    pesquisar_produto();
                     TelaProdutoButtonNOVO.setEnabled(true);
                 }
             }
@@ -171,6 +191,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                 if (apagado > 0) {
                     JOptionPane.showMessageDialog(null, "Produto removido com sucesso!");
                     limpadados();
+                    pesquisar_produto();
                     TelaProdutoButtonNOVO.setEnabled(true);
                 }
 
@@ -211,6 +232,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TelaProdutoTABELAPRODUTO = new javax.swing.JTable();
+        TelaProdutoCOMBOPESQUISACATEGORIA = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -241,6 +263,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         TelaProdutoButtonPESQUISAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/search.png"))); // NOI18N
         TelaProdutoButtonPESQUISAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TelaProdutoButtonPESQUISAR.setEnabled(false);
         TelaProdutoButtonPESQUISAR.setPreferredSize(new java.awt.Dimension(60, 60));
 
         TelaProdutoButtonEXCLUIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/delete.png"))); // NOI18N
@@ -305,6 +328,13 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TelaProdutoTABELAPRODUTO);
 
+        TelaProdutoCOMBOPESQUISACATEGORIA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monitores", "Mouse", "Teclado", "CPU", "GPU", "Gabinetes", "Fans", "Coolers", " " }));
+        TelaProdutoCOMBOPESQUISACATEGORIA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -338,14 +368,14 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                     .addComponent(TelaProdutoCOMBOCATEGORIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(TelaProdutoPESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))))
+                        .addGap(57, 57, 57)
+                        .addComponent(TelaProdutoCOMBOPESQUISACATEGORIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(9, 9, 9))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,9 +385,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(TelaProdutoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TelaProdutoPESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(TelaProdutoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -367,7 +395,12 @@ public class TelaProduto extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3)
                             .addComponent(TelaProdutoDESCRICAO, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TelaProdutoPESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(TelaProdutoCOMBOPESQUISACATEGORIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -426,6 +459,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         pesquisar_produto();
     }//GEN-LAST:event_TelaProdutoPESQUISARKeyReleased
 
+    private void TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked
+        // TODO add your handling code here:
+        pesquisar_produto_categoria();
+    }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton TelaProdutoButtonEDITAR;
@@ -433,6 +471,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
     private javax.swing.JButton TelaProdutoButtonNOVO;
     private javax.swing.JButton TelaProdutoButtonPESQUISAR;
     private javax.swing.JComboBox<String> TelaProdutoCOMBOCATEGORIA;
+    private javax.swing.JComboBox<String> TelaProdutoCOMBOPESQUISACATEGORIA;
     private javax.swing.JTextField TelaProdutoDESCRICAO;
     private javax.swing.JTextField TelaProdutoID;
     private javax.swing.JTextField TelaProdutoNOME;
