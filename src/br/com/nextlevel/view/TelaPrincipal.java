@@ -47,6 +47,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaPrincipalCADASTROPRODUTO = new javax.swing.JMenuItem();
         TelaPrincipalPEDIDOS = new javax.swing.JMenu();
         TelaPrincipalPEDIDOSPEDIDOS = new javax.swing.JMenuItem();
+        TelaPrincipalPEDIDOSAPI = new javax.swing.JMenuItem();
         TelaPrincipalRELATORIOS = new javax.swing.JMenu();
         TelaPrincipalRELATORIOSSERVICOS = new javax.swing.JMenuItem();
         TelaPrincipalOPCOES = new javax.swing.JMenu();
@@ -146,6 +147,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         TelaPrincipalPEDIDOS.add(TelaPrincipalPEDIDOSPEDIDOS);
+
+        TelaPrincipalPEDIDOSAPI.setText("Pedidos API");
+        TelaPrincipalPEDIDOSAPI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaPrincipalPEDIDOSAPIActionPerformed(evt);
+            }
+        });
+        TelaPrincipalPEDIDOS.add(TelaPrincipalPEDIDOSAPI);
 
         TelaPrincipalMENU.add(TelaPrincipalPEDIDOS);
 
@@ -272,6 +281,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Desktop.add(produto);
     }//GEN-LAST:event_TelaPrincipalCADASTROPRODUTOActionPerformed
 
+    private void TelaPrincipalPEDIDOSAPIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaPrincipalPEDIDOSAPIActionPerformed
+        // TODO add your handling code here:
+        
+        TelaPedidosAPI pedidosAPI = new TelaPedidosAPI();
+        pedidosAPI.setVisible(true);
+        Desktop.add(pedidosAPI);
+        
+    }//GEN-LAST:event_TelaPrincipalPEDIDOSAPIActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,6 +340,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu TelaPrincipalOPCOES;
     private javax.swing.JMenuItem TelaPrincipalOPCOESSAIR;
     private javax.swing.JMenu TelaPrincipalPEDIDOS;
+    private javax.swing.JMenuItem TelaPrincipalPEDIDOSAPI;
     private javax.swing.JMenuItem TelaPrincipalPEDIDOSPEDIDOS;
     private javax.swing.JMenuItem TelaPrincipalPEDIDOSSOBRE;
     public static javax.swing.JMenu TelaPrincipalRELATORIOS;
