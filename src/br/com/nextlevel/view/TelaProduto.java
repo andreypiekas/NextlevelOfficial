@@ -107,8 +107,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         }
 
     }
-    
-    
+
     private void pesquisar_produto_categoria() {
         // String sql = "select * from clientes where nome like ?";
         String sql = "select id as ID, nome as Nome, descricao as Descricao, valor as valor, peso as Peso, categoria as categoria from produto where categoria like ?";
@@ -295,6 +294,11 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
         TelaProdutoPESO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
+        TelaProdutoPESQUISAR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TelaProdutoPESQUISARMouseClicked(evt);
+            }
+        });
         TelaProdutoPESQUISAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelaProdutoPESQUISARActionPerformed(evt);
@@ -332,6 +336,15 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         TelaProdutoCOMBOPESQUISACATEGORIA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TelaProdutoCOMBOPESQUISACATEGORIAMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased(evt);
             }
         });
 
@@ -463,6 +476,26 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         pesquisar_produto_categoria();
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked
+
+    private void TelaProdutoPESQUISARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoPESQUISARMouseClicked
+        // TODO add your handling code here:
+        pesquisar_produto();
+    }//GEN-LAST:event_TelaProdutoPESQUISARMouseClicked
+
+    private void TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
+        // TODO add your handling code here:
+        pesquisar_produto_categoria();
+    }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
+
+    private void TelaProdutoCOMBOPESQUISACATEGORIAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMousePressed
+        // TODO add your handling code here:
+        pesquisar_produto_categoria();
+    }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMousePressed
+
+    private void TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased
+        // TODO add your handling code here:
+        pesquisar_produto_categoria();
+    }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
