@@ -518,7 +518,9 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked
         // TODO add your handling code here:
+        //TelaProdutoPESQUISAR.setText(null);
         pesquisar_produto_categoria();
+        
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseClicked
 
     private void TelaProdutoPESQUISARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoPESQUISARMouseClicked
@@ -528,16 +530,19 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
         // TODO add your handling code here:
+        TelaProdutoPESQUISAR.setText(null);
         pesquisar_produto_categoria();
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMousePressed
         // TODO add your handling code here:
+        TelaProdutoPESQUISAR.setText(null);
         pesquisar_produto_categoria();
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMousePressed
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased
         // TODO add your handling code here:
+        TelaProdutoPESQUISAR.setText(null);
         pesquisar_produto_categoria();
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseReleased
 
