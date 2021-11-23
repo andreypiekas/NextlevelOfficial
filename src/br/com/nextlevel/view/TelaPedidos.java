@@ -27,6 +27,7 @@ import br.com.nextlevel.jdbc.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import br.com.nextlevel.view.TelaProduto;
 
 /**
  *
@@ -48,16 +49,18 @@ public class TelaPedidos extends javax.swing.JInternalFrame {
 
 //    private void setar_campos() {
 //        int setar = TelaPedidosTABLEPRODUTOS.getSelectedRow();
-//        TelaPedidos.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 0).toString());
-//        TelaClientesNOME.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 1).toString());
-//        TelaClientesEMAIL.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 2).toString());
-//        TelaClientesCPF.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 3).toString());
-//        TelaClientesTELEFONE.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 4).toString());
-//        TelaClientesENTREGA.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 5).toString());
+//        TelaProduto.se (TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 1).toString());
+//        TelaClientesNOME.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 2).toString());
+//        TelaClientesEMAIL.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 3).toString());
+//        TelaClientesCPF.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 4).toString());
+//        TelaClientesTELEFONE.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 5).toString());
+//        TelaClientesENTREGA.setText(TelaPedidosTABLEPRODUTOS.getModel().getValueAt(setar, 6).toString());
+//        
+//        TelaPedidosTABLEPRODUTOS.getSelectedRow(TelaProdutoID);
 //
 //
 //        ///
-//        TelaClientesButtonADICIONAR.setEnabled(false);
+//        TelaPedidosBUTTONADICIONAR.setEnabled(false);
 //
 //    }
 

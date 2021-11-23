@@ -116,7 +116,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="TelaClientesComboESTADO" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TelaClienteesButtonENDERECOS" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="TelaClientesCPF" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                                   <Component id="TelaClientesTELEFONE" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
@@ -219,7 +219,7 @@
                   <Component id="TelaClientesCIDADE" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="TelaClientesComboESTADO" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TelaClienteesButtonENDERECOS" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -365,6 +365,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="TelaClientesPESQUISAR">
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClientesPESQUISARActionPerformed"/>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TelaClientesPESQUISARKeyReleased"/>
       </Events>
     </Component>
@@ -537,18 +538,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClientesButtonEDITARActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="TelaClienteesButtonENDERECOS">
       <Properties>
         <Property name="text" type="java.lang.String" value="Endere&#xe7;os"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClienteesButtonENDERECOSActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="TelaClientesID">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClientesIDActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>

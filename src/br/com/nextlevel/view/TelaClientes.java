@@ -239,7 +239,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesButtonADICIONAR = new javax.swing.JButton();
         TelaClientesButtonREMOVER = new javax.swing.JButton();
         TelaClientesButtonEDITAR = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        TelaClienteesButtonENDERECOS = new javax.swing.JButton();
         TelaClientesID = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -311,6 +311,11 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         TelaClientesComboESTADO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", " " }));
 
+        TelaClientesPESQUISAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaClientesPESQUISARActionPerformed(evt);
+            }
+        });
         TelaClientesPESQUISAR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 TelaClientesPESQUISARKeyReleased(evt);
@@ -369,14 +374,19 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Endereços");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        TelaClienteesButtonENDERECOS.setText("Endereços");
+        TelaClienteesButtonENDERECOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TelaClienteesButtonENDERECOSActionPerformed(evt);
             }
         });
 
         TelaClientesID.setEnabled(false);
+        TelaClientesID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaClientesIDActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("ID");
 
@@ -441,7 +451,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(TelaClientesComboESTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton1))
+                                        .addComponent(TelaClienteesButtonENDERECOS))
                                     .addComponent(TelaClientesCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TelaClientesTELEFONE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -519,7 +529,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                     .addComponent(TelaClientesCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(TelaClientesComboESTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(TelaClienteesButtonENDERECOS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TelaClientesButtonADICIONAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -554,7 +564,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         setar_campos();
     }//GEN-LAST:event_TelaClientesTABELACLIENTESMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void TelaClienteesButtonENDERECOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClienteesButtonENDERECOSActionPerformed
         // TODO add your handling code here:
 
         String sql = "select * from endereco where Clientes_idClientes = ?";
@@ -569,7 +579,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_TelaClienteesButtonENDERECOSActionPerformed
 
     private void TelaClientesButtonEDITARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesButtonEDITARActionPerformed
         // TODO add your handling code here:
@@ -581,8 +591,17 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         remover();
     }//GEN-LAST:event_TelaClientesButtonREMOVERActionPerformed
 
+    private void TelaClientesIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelaClientesIDActionPerformed
+
+    private void TelaClientesPESQUISARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesPESQUISARActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelaClientesPESQUISARActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton TelaClienteesButtonENDERECOS;
     private javax.swing.JTextField TelaClientesBAIRRO;
     private javax.swing.JButton TelaClientesButtonADICIONAR;
     private javax.swing.JButton TelaClientesButtonEDITAR;
@@ -601,7 +620,6 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TelaClientesRUA;
     private javax.swing.JTable TelaClientesTABELACLIENTES;
     private javax.swing.JFormattedTextField TelaClientesTELEFONE;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
