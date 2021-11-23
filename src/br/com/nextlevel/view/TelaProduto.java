@@ -240,6 +240,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("Produto");
 
         jLabel1.setText("ID");
 
@@ -530,8 +531,8 @@ public class TelaProduto extends javax.swing.JInternalFrame {
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
         // TODO add your handling code here:
-        TelaProdutoPESQUISAR.setText(null);
-        pesquisar_produto_categoria();
+//        TelaProdutoPESQUISAR.setText(null);
+//        pesquisar_produto_categoria();
     }//GEN-LAST:event_TelaProdutoCOMBOPESQUISACATEGORIAMouseEntered
 
     private void TelaProdutoCOMBOPESQUISACATEGORIAMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaProdutoCOMBOPESQUISACATEGORIAMousePressed
