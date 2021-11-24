@@ -135,58 +135,58 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosRUA" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TelaClientesEnderecosRUA" min="-2" pref="88" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosBAIRRO" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TelaClientesEnderecosBAIRRO" min="-2" pref="94" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosNUMERO" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="TelaClientesEnderecosNUMERO" min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosCIDADE" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TelaClientesEnderecosCIDADE" min="-2" pref="88" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace pref="205" max="32767" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="TelaClientesEnderecosESTADO" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosCOMBOESTADO" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosCOMPLEMENTO" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="83" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="TelaClientesEnderecosCEP" min="-2" pref="109" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosIDENDERECO" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosCEP" min="-2" pref="109" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosButtonADICIONAR" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosButtonEDITAR" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="73" max="32767" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosButtonEXCLUIR" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosCOMPLEMENTO" min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosIDCLIENTE" min="-2" pref="99" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -201,11 +201,11 @@
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TelaClientesEnderecosCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosIDENDERECO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosButtonADICIONAR" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelaClientesEnderecosButtonEDITAR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TelaClientesEnderecosButtonEXCLUIR" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -214,19 +214,30 @@
                       <Component id="TelaClientesEnderecosRUA" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="TelaClientesEnderecosNUMERO" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TelaClientesEnderecosCOMPLEMENTO" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TelaClientesEnderecosBAIRRO" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TelaClientesEnderecosCIDADE" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TelaClientesEnderecosESTADO" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TelaClientesEnderecosCOMPLEMENTO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TelaClientesEnderecosBAIRRO" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TelaClientesEnderecosCIDADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TelaClientesEnderecosCOMBOESTADO" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TelaClientesEnderecosIDCLIENTE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -240,9 +251,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosCEP">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClientesEnderecosCEPActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -275,65 +286,93 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosRUA">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosNUMERO">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosCOMPLEMENTO">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField4"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosBAIRRO">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField5"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TelaClientesEnderecosCIDADE">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField6"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="TelaClientesEnderecosESTADO">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField7"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="TelaClientesEnderecosIDENDERECO">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="text" type="java.lang.String" value="jTextField8"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="TelaClientesEnderecosButtonADICIONAR">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/nextlevel/icones/create.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaClientesEnderecosButtonADICIONARActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="TelaClientesEnderecosButtonEDITAR">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/nextlevel/icones/edit.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="TelaClientesEnderecosButtonEXCLUIR">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/nextlevel/icones/delete.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="TelaClientesEnderecosCOMBOESTADO">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="28">
+                <StringItem index="0" value="AC"/>
+                <StringItem index="1" value="AL"/>
+                <StringItem index="2" value="AP"/>
+                <StringItem index="3" value="AM"/>
+                <StringItem index="4" value="BA"/>
+                <StringItem index="5" value="CE"/>
+                <StringItem index="6" value="DF"/>
+                <StringItem index="7" value="ES"/>
+                <StringItem index="8" value="GO"/>
+                <StringItem index="9" value="MA"/>
+                <StringItem index="10" value="MT"/>
+                <StringItem index="11" value="MS"/>
+                <StringItem index="12" value="MG"/>
+                <StringItem index="13" value="PA"/>
+                <StringItem index="14" value="PB"/>
+                <StringItem index="15" value="PR"/>
+                <StringItem index="16" value="PE"/>
+                <StringItem index="17" value="PI"/>
+                <StringItem index="18" value="RJ"/>
+                <StringItem index="19" value="RN"/>
+                <StringItem index="20" value="RS"/>
+                <StringItem index="21" value="RO"/>
+                <StringItem index="22" value="RR"/>
+                <StringItem index="23" value="SC"/>
+                <StringItem index="24" value="SP"/>
+                <StringItem index="25" value="SE"/>
+                <StringItem index="26" value="TO"/>
+                <StringItem index="27" value=""/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TelaClientesEnderecosIDCLIENTE">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="IDCliente"/>
           </Properties>
         </Component>
       </SubComponents>

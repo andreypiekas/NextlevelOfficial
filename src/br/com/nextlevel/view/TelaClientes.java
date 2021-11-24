@@ -52,10 +52,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst.setString(1, TelaClientesNOME.getText());
             pst.setString(2, TelaClientesEMAIL.getText());
             pst.setString(3, TelaClientesCPF.getText());
-            //  pst.setString(3, TelaClientesCPF.getValue().toString());
-
             pst.setString(4, TelaClientesTELEFONE.getText());
-            //   pst.setString(4, TelaClientesTELEFONE.getValue().toString());
             pst.setString(5, TelaClientesENTREGA.getText());
             pst.setString(6, TelaClientesCEP.getText());
             pst.setString(7, TelaClientesRUA.getText());
