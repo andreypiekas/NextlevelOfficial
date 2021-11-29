@@ -83,7 +83,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addContainerGap(928, Short.MAX_VALUE)
+                .addContainerGap(1201, Short.MAX_VALUE)
                 .addComponent(TelaPrincipalLOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -202,7 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 1126, Short.MAX_VALUE)
+                        .addComponent(Desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 1399, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TelaPrincipalUSUARIO)
@@ -222,7 +222,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(1154, 745));
+        setSize(new java.awt.Dimension(1427, 745));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

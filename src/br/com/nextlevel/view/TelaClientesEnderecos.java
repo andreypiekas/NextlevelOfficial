@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
+import br.com.nextlevel.view.TelaClientes;
 
 /**
  *
@@ -32,19 +33,11 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
         conexao = ConnectionFactory.getConnection();
     }
 
-    private void adicionar() {
+    private void adicionar_endereco() {
         String sql = "insert into endereco (Clientes_idClientes, cep, rua, numero, complemento, bairro, cidade, estado) values (?,?,?,?,?,?,?,?)";
         try {
+            
             pst = conexao.prepareStatement(sql);
-            // pst.setString(1, TelaClientesEnderecosIDENDERECO.getText());
-            // pst.setString(1, TelclienteN. );
-            //pst.getResultSet(TelclienteN.equals(TelclienteN.))
-            //System.out.println(TelaClientes.);
-            // System.out.println(TelaClientes.getTe);
-
-            //System.out.println(((TelaClientes)TelclienteN.getComponent(TelclienteN.)));
-            //TelclienteN.getComponent(TelclienteN.getHeight(TelaClientes.TelaClientesID));
-            //System.out.println("SQLException: " + TelclienteN.toString(TelaClientes.));
             pst.setString(1, TelaClientesEnderecosIDCLIENTE.getText());
             pst.setString(2, TelaClientesEnderecosCEP.getText());
             pst.setString(3, TelaClientesEnderecosRUA.getText());
@@ -76,7 +69,7 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     }
 
-    private void pesquisar_cliente() {
+    private void pesquisar_cliente_endereco() {
         // String sql = "select * from clientes where nome like ?";
         String sql = "select idEndereco as ID, Clientes_idClientes as IDCLiente, cep as CEP, rua as RUA, numero as NUMERO ,complemento as Compl, bairro as Bairro, cidade as Cidade, estado as Estado from endereco where Clientes_idClientes like ?";
 
@@ -96,7 +89,7 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     }
 
-    public void setar_campos() {
+    public void setar_campos_endereco() {
         int setar = TelaClientesEnderecosTABELA.getSelectedRow();
         TelaClientesEnderecosIDENDERECO.setText(TelaClientesEnderecosTABELA.getModel().getValueAt(setar, 0).toString());
 
@@ -113,7 +106,7 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
         //TelaClientesButtonADICIONAR.setEnabled(false);
     }
 
-    private void alterar() {
+    private void alterar_endereco() {
         String sql = "update endereco set cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where idEndereco=?";
 
         try {
@@ -150,7 +143,7 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     }
 
-    private void remover() {
+    private void remover_endereco() {
         //confirmação de remocao
         int confirma = JOptionPane.showConfirmDialog(null, "Confirma remoção do Endereço?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
@@ -208,6 +201,11 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         TelaClientesEnderecosTABELA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,6 +268,12 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
         });
 
         TelaClientesEnderecosCOMBOESTADO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "" }));
+
+        TelaClientesEnderecosIDCLIENTE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaClientesEnderecosIDCLIENTEActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("IDCliente");
 
@@ -391,7 +395,7 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     private void TelaClientesEnderecosButtonADICIONARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosButtonADICIONARActionPerformed
         // TODO add your handling code here:
-        adicionar();
+        adicionar_endereco();
     }//GEN-LAST:event_TelaClientesEnderecosButtonADICIONARActionPerformed
 
     private void TelaClientesEnderecosCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosCEPActionPerformed
@@ -400,18 +404,27 @@ public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     private void TelaClientesEnderecosButtonEDITARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosButtonEDITARActionPerformed
         // TODO add your handling code here:
-        alterar();
+        alterar_endereco();
     }//GEN-LAST:event_TelaClientesEnderecosButtonEDITARActionPerformed
 
     private void TelaClientesEnderecosButtonEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosButtonEXCLUIRActionPerformed
         // TODO add your handling code here:
-        remover();
+        remover_endereco();
     }//GEN-LAST:event_TelaClientesEnderecosButtonEXCLUIRActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
-        setar_campos();
+        setar_campos_endereco();
     }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void TelaClientesEnderecosIDCLIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosIDCLIENTEActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TelaClientesEnderecosIDCLIENTEActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
