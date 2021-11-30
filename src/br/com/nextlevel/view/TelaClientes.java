@@ -276,6 +276,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         String sql = "update endereco set cep=?, rua=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? where idEndereco=?";
         try {
             pst = conexao.prepareStatement(sql);
+            pst.setString(0, TelaClientesEnderecosIDENDERECO.getText());
             pst.setString(1, TelaClientesEnderecosCEP.getText());
             pst.setString(2, TelaClientesEnderecosRUA.getText());
             pst.setString(3, TelaClientesEnderecosNUMERO.getText());
@@ -316,7 +317,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                 pst.setString(1, TelaClientesEnderecosIDENDERECO.getText());
                 int apagado = pst.executeUpdate();
                 if (apagado > 0) {
-                    JOptionPane.showMessageDialog(null, "Cliente removido com sucesso!");
+                    JOptionPane.showMessageDialog(null, "Endereço removido com sucesso!");
                     //limpadados();
                     //    TelaClientesButtonADICIONAR.setEnabled(true);
                 }
@@ -607,19 +608,26 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "CEP", "RUA", "NUMERO", "COMPLEMENTO", "BAIRRO", "CIDADE", "ESTADO"
+                "ID", "Cliente", "CEP", "RUA", "NUMERO", "COMPLEMENTO", "BAIRRO", "CIDADE", "ESTADO"
             }
         ));
+        TelaClientesEnderecosTABELA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TelaClientesEnderecosTABELAMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(TelaClientesEnderecosTABELA);
 
-        jLabel24.setText("ID");
+        TelaClientesEnderecosIDENDERECO.setEditable(false);
+
+        jLabel24.setText("ID Endereco");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel15)
@@ -677,7 +685,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                             .addComponent(TelaClientesBAIRRO, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TelaClientesNOME)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(43, 43, 43)
+                .addGap(10, 10, 10)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -686,7 +694,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel21)
@@ -696,7 +704,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel22)
                                         .addGap(18, 18, 18)
                                         .addComponent(TelaClientesEnderecosCIDADE, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                                         .addComponent(jLabel23)
                                         .addGap(18, 18, 18)
                                         .addComponent(TelaClientesEnderecosCOMBOESTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -755,10 +763,9 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                                     .addComponent(TelaClientesID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel14))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel24)
-                                        .addComponent(TelaClientesEnderecosIDENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel24)
+                                    .addComponent(TelaClientesEnderecosIDENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1)
                                 .addComponent(TelaClientesEnderecosCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -871,6 +878,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
 
         //evento que sera usado para setar os campos da tabela ao click do mouse
         setar_campos();
+        pesquisar_cliente_endereco();
     }//GEN-LAST:event_TelaClientesTABELACLIENTESMouseClicked
 
     private void TelaClienteesButtonENDERECOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaClienteesButtonENDERECOSActionPerformed
@@ -930,8 +938,13 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     private void TelaClientesPESQUISARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaClientesPESQUISARMouseClicked
         // TODO add your handling code here:
         pesquisar_cliente();
-        pesquisar_cliente_endereco();
+       // pesquisar_cliente_endereco();
     }//GEN-LAST:event_TelaClientesPESQUISARMouseClicked
+
+    private void TelaClientesEnderecosTABELAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosTABELAMouseClicked
+        // TODO add your handling code here:
+        setar_campos_endereco();
+    }//GEN-LAST:event_TelaClientesEnderecosTABELAMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -56,7 +56,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
@@ -123,7 +123,7 @@
                   </Group>
                   <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -133,7 +133,7 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
@@ -143,7 +143,7 @@
                                       <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="TelaClientesEnderecosCIDADE" min="-2" pref="88" max="-2" attributes="0"/>
-                                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                                      <EmptySpace pref="66" max="32767" attributes="0"/>
                                       <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="TelaClientesEnderecosCOMBOESTADO" min="-2" max="-2" attributes="0"/>
@@ -219,13 +219,11 @@
                                   <Component id="TelaClientesID" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="TelaClientesEnderecosIDENDERECO" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TelaClientesEnderecosIDENDERECO" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <Component id="TelaClientesEnderecosCEP" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -807,8 +805,9 @@
         <Component class="javax.swing.JTable" name="TelaClientesEnderecosTABELA">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="8" rowCount="0">
+              <Table columnCount="9" rowCount="0">
                 <Column editable="true" title="ID" type="java.lang.Object"/>
+                <Column editable="true" title="Cliente" type="java.lang.Object"/>
                 <Column editable="true" title="CEP" type="java.lang.Object"/>
                 <Column editable="true" title="RUA" type="java.lang.Object"/>
                 <Column editable="true" title="NUMERO" type="java.lang.Object"/>
@@ -822,6 +821,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TelaClientesEnderecosTABELAMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="TelaClientesEnderecosTABELA = new javax.swing.JTable(){&#xa;    public boolean isCellEditable(int rowIndex, int colIndex){&#xa;        return false;&#xa;    }&#xa;};"/>
           </AuxValues>
@@ -829,10 +831,13 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="TelaClientesEnderecosIDENDERECO">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel24">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ID"/>
+        <Property name="text" type="java.lang.String" value="ID Endereco"/>
       </Properties>
     </Component>
   </SubComponents>
