@@ -9,8 +9,12 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author andrey.piekas
+ * @author Andrey Gheno Piekas
+ * 
  */
+
+// Nesta classe, é somente fornecido uma forma de teste para o banco de dados.
+// Ela deve ser executada caso o usuário esteja enfrentando algum problema com a conexão, para verificar o erro que está ocorrendo
 public class TestaConexao {
 
     public static void main(String[] args) {

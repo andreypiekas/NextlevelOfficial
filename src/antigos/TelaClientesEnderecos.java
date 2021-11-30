@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.nextlevel.view;
+package antigos;
 
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import java.sql.Connection;
@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
+import br.com.nextlevel.view.TelaClientes;
 import br.com.nextlevel.view.TelaClientes;
 
 /**

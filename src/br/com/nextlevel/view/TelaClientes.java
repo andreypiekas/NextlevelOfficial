@@ -4,6 +4,7 @@
  */
 package br.com.nextlevel.view;
 
+import antigos.TelaClientesEnderecos;
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import javax.swing.JOptionPane;
@@ -12,8 +13,11 @@ import net.proteanit.sql.DbUtils;
 
 /**
  *
- * @author andrey gheno piekas
+ * @author Andrey Gheno Piekas
+ *
+ *
  */
+// Essa é a tela de clientes, que foi construida em cima de um JInternalFrame, para trabalhar sobre o desktop projetado na TelaPrincial
 public class TelaClientes extends javax.swing.JInternalFrame {
 
     Connection conexao = null;
@@ -536,6 +540,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         });
 
         TelaClienteesButtonENDERECOS.setText("Endereços");
+        TelaClienteesButtonENDERECOS.setEnabled(false);
         TelaClienteesButtonENDERECOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TelaClienteesButtonENDERECOSActionPerformed(evt);
@@ -938,7 +943,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     private void TelaClientesPESQUISARMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaClientesPESQUISARMouseClicked
         // TODO add your handling code here:
         pesquisar_cliente();
-       // pesquisar_cliente_endereco();
+        // pesquisar_cliente_endereco();
     }//GEN-LAST:event_TelaClientesPESQUISARMouseClicked
 
     private void TelaClientesEnderecosTABELAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TelaClientesEnderecosTABELAMouseClicked

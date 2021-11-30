@@ -8,17 +8,12 @@ package br.com.nextlevel;
 /**
  *
  * @author Andrey Gheno Piekas
+ * @version 1.0.0
  */
 public class NextLevel {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-//        System.out.println("Teste");
-//        System.out.println("Teste");
-        
+
     }
-    
+
 }

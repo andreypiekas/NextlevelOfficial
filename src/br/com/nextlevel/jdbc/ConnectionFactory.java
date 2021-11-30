@@ -11,8 +11,14 @@ import java.sql.Connection;
 
 /**
  *
- * @author andrey.piekas
+ * @author Andrey Gheno Piekas
+ *
  */
+
+// Nesta Classe, é efetuado a conexão com o banco de dados, onde
+// URL = endereço destino para o bando de dados.
+// user = usuário para o bando de dados
+// password = senha para o banco de dados
 public class ConnectionFactory {
 
     public static Connection getConnection() {
@@ -33,9 +39,7 @@ public class ConnectionFactory {
         } catch (SQLException ex) {
             //a linha abaixo retorna erro na conexao caso a mesma nao de certo e caso de certo, a string de conexao
             //System.out.println(ex);
-            
-            
-            //throw new RuntimeException(ex);
+
             return null;
 
             //Lançar um erro na tela do usuário quando o programa executa
