@@ -91,6 +91,7 @@ public class TelaLogin extends javax.swing.JFrame {
         TelaLoginSENHA = new javax.swing.JPasswordField();
         TelaLoginButtonLOGIN = new javax.swing.JButton();
         TelaLoginSTATUSBD = new javax.swing.JLabel();
+        TelaLoginButtonFECHAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nextlevel - Login");
@@ -109,6 +110,13 @@ public class TelaLogin extends javax.swing.JFrame {
 
         TelaLoginSTATUSBD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/DBerro.png"))); // NOI18N
 
+        TelaLoginButtonFECHAR.setText("Fechar");
+        TelaLoginButtonFECHAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelaLoginButtonFECHARActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,7 +126,9 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(TelaLoginSTATUSBD)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(TelaLoginButtonFECHAR)
+                        .addGap(27, 27, 27)
                         .addComponent(TelaLoginButtonLOGIN))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +153,9 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(TelaLoginSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TelaLoginButtonLOGIN)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TelaLoginButtonLOGIN)
+                        .addComponent(TelaLoginButtonFECHAR))
                     .addComponent(TelaLoginSTATUSBD))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,6 +169,11 @@ public class TelaLogin extends javax.swing.JFrame {
         //chamar metodo logar
         logar();
     }//GEN-LAST:event_TelaLoginButtonLOGINActionPerformed
+
+    private void TelaLoginButtonFECHARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelaLoginButtonFECHARActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_TelaLoginButtonFECHARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +214,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton TelaLoginButtonFECHAR;
     private javax.swing.JButton TelaLoginButtonLOGIN;
     private javax.swing.JTextField TelaLoginLOGIN;
     private javax.swing.JPasswordField TelaLoginSENHA;
