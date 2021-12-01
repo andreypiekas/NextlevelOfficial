@@ -6,7 +6,7 @@ package br.com.nextlevel.view;
 
 /**
  *
- * @author andre
+ * @author Andrey Gheno Piekas
  */
 public class TelaSobre extends javax.swing.JFrame {
 

@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2021 andrey.piekas.
+ * Copyright 2021 Andrey Gheno Piekas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ import net.proteanit.sql.DbUtils;
 
 /**
  *
- * @author andrey.piekas
+ * @author Andrey Gheno Piekas
  */
 public class TelaProduto extends javax.swing.JInternalFrame {
 

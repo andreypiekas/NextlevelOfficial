@@ -17,8 +17,7 @@ import br.com.nextlevel.view.TelaClientes;
 
 /**
  *
- * @author andrey.piekas@gmail.com
- */
+ * @author Andrey Gheno Piekas
 public class TelaClientesEnderecos extends javax.swing.JFrame {
 
     /**

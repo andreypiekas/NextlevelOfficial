@@ -7,7 +7,7 @@ package antigos;
 
 /**
  *
- * @author andrey.piekas
+ * @author Andrey Gheno Piekas
  */
 public class TelaFuncionariosOLD extends javax.swing.JFrame {
 

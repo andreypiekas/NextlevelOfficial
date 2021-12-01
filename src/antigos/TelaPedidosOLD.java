@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.nextlevel.view;
+package antigos;
 
 /**
  *
- * @author andrey.piekas
+ * @author Andrey Gheno Piekas
  */
 public class TelaPedidosOLD extends javax.swing.JFrame {
 

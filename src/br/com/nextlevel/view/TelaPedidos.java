@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2021 andre.
+ * Copyright 2021 Andrey Gheno Piekas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import br.com.nextlevel.view.TelaProduto;
 
 /**
  *
- * @author andre
+ * @author Andrey Gheno Piekas
  */
 public class TelaPedidos extends javax.swing.JInternalFrame {
 

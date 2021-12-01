@@ -6,7 +6,7 @@ package br.com.nextlevel.view;
 
 /**
  *
- * @author andrey piekas
+ * @author Andrey Gheno Piekas
  */
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
@@ -14,9 +14,6 @@ import javax.swing.JOptionPane;
 
 public class TelaFuncionarios extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaFuncionarios
-     */
     Connection conexao = null;
     PreparedStatement pst = null;
     ResultSet rs = null;

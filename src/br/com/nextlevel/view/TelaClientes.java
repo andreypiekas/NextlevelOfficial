@@ -4,7 +4,7 @@
  */
 package br.com.nextlevel.view;
 
-import antigos.TelaClientesEnderecos;
+//import antigos.TelaClientesEnderecos;
 import java.sql.*;
 import br.com.nextlevel.jdbc.ConnectionFactory;
 import javax.swing.JOptionPane;
@@ -894,8 +894,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, TelaClientesPESQUISAR.getText());
             rs = pst.executeQuery();
-            TelaClientesEnderecos enderecos = new TelaClientesEnderecos();
-            enderecos.setVisible(true);
+            //TelaClientesEnderecos enderecos = new TelaClientesEnderecos();
+            //enderecos.setVisible(true);
 
         } catch (Exception e) {
         }

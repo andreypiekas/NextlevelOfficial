@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author andrey piekas
+ * @author Andrey Gheno Piekas
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
