@@ -608,6 +608,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="TelaClientesENTREGA">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="TelaClientesButtonADICIONAR">
       <Properties>

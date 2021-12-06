@@ -40,6 +40,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         TelaClientesCPF.setText(null);
         TelaClientesTELEFONE.setText(null);
         TelaClientesENTREGA.setText(null);
+        TelaClientesRUA.setText(null);
         TelaClientesCEP.setText(null);
         TelaClientesNUMEROENDERECO.setText(null);
         TelaClientesCOMPLEMENTO.setText(null);
@@ -532,6 +533,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         jScrollPane2.setViewportView(TelaClientesTABELACLIENTES);
 
         jLabel13.setText("Entrega");
+
+        TelaClientesENTREGA.setEditable(false);
 
         TelaClientesButtonADICIONAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/create.png"))); // NOI18N
         TelaClientesButtonADICIONAR.setPreferredSize(new java.awt.Dimension(60, 60));
