@@ -69,6 +69,7 @@
         <Menu class="javax.swing.JMenu" name="TelaPrincipalPEDIDOS">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pedidos"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="TelaPrincipalPEDIDOSPEDIDOS">
@@ -102,6 +103,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Servi&#xe7;os"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelaPrincipalRELATORIOSSERVICOSActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -201,7 +205,7 @@
                   <Component id="TelaPrincipalUSUARIO" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="TelaPrincipalDATA" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

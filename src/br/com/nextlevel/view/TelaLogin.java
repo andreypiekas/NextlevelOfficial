@@ -42,8 +42,14 @@ public class TelaLogin extends javax.swing.JFrame {
                     this.dispose(); /// fecha o formulario de login ao abrir a tela principal
                     TelaPrincipal.TelaPrincipalRELATORIOS.setEnabled(true);
                     TelaPrincipal.TelaPrincipalCADASTROFUNCIONARIOS.setEnabled(true);
+
                     TelaPrincipal.TelaPrincipalUSUARIO.setText(rs.getString(2));
                     TelaPrincipal.TelaPrincipalUSUARIO.setForeground(Color.red);
+                    
+                    //DESATIVADO RELATORIOS ATÉ MOLDAR TELA
+                    TelaPrincipal.TelaPrincipalRELATORIOS.setEnabled(false);
+                  // TelaPrincipal.TelaPrincipalPEDIDOS.setEnabled(false);
+
                 } else {
                     TelaPrincipal principal = new TelaPrincipal();
                     principal.setVisible(true);
@@ -60,9 +66,6 @@ public class TelaLogin extends javax.swing.JFrame {
         }
     }
 
-    /**
-     * Creates new form TelaClientes2
-     */
     public TelaLogin() {
         initComponents();
         conexao = ConnectionFactory.getConnection();
@@ -92,6 +95,7 @@ public class TelaLogin extends javax.swing.JFrame {
         TelaLoginButtonLOGIN = new javax.swing.JButton();
         TelaLoginSTATUSBD = new javax.swing.JLabel();
         TelaLoginButtonFECHAR = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nextlevel - Login");
@@ -117,16 +121,16 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/nextlevel/icones/8fb43566dc0e49c08c189576a3027a4e.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(TelaLoginSTATUSBD)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addComponent(TelaLoginButtonFECHAR)
                         .addGap(27, 27, 27)
                         .addComponent(TelaLoginButtonLOGIN))
@@ -136,28 +140,35 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TelaLoginSENHA, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-                            .addComponent(TelaLoginLOGIN))))
-                .addGap(34, 34, 34))
+                            .addComponent(TelaLoginSENHA)
+                            .addComponent(TelaLoginLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TelaLoginSTATUSBD, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(TelaLoginLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TelaLoginSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(TelaLoginLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(TelaLoginSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(TelaLoginButtonLOGIN)
                         .addComponent(TelaLoginButtonFECHAR))
                     .addComponent(TelaLoginSTATUSBD))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -221,6 +232,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel TelaLoginSTATUSBD;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
